@@ -7,12 +7,12 @@
 <meta name="description" content="El terremoto del 10 de agosto dejó inhabitable la casa de Mabel Xiomara en Circasia, Quindío. La deuda con el banco sigue. Ayúdanos a que empiece de nuevo.">
 <meta property="og:title" content="Ayuda para Mabel Xiomara">
 <meta property="og:description" content="Su casa quedó inhabitable por el terremoto. La deuda con el banco sigue. Entre todos hacemos la diferencia.">
-<meta property="og:image" content="img/familia.jpg">
+<meta property="og:image" content="https://chiguirito.github.io/ayuda-para-mabel/img/familia.jpg">
 <style>
   :root{
-    --terracotta:#b95b3f; --terracotta-dark:#9d4a32; --teal:#1f5f5b;
-    --ink:#2b2622; --ink-soft:#5c534b; --paper:#faf6f1; --card:#ffffff;
-    --line:#e7ddd3; --ok:#3e7d4f;
+    --green:#2f7d56; --green-dark:#256345; --green-deep:#1d4d38;
+    --ink:#26302a; --ink-soft:#54605a; --paper:#f5f8f4; --card:#ffffff;
+    --line:#dbe6dc; --ok:#3e7d4f;
   }
   *{box-sizing:border-box;margin:0;padding:0}
   body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
@@ -24,24 +24,24 @@
 
   header{padding:18px 0 6px}
   .hero-img{width:100%;max-height:440px;object-fit:cover;object-position:center 30%}
-  h1{font-size:30px;line-height:1.2;margin:18px 0 8px;color:var(--terracotta-dark)}
+  h1{font-size:30px;line-height:1.2;margin:18px 0 8px;color:var(--green-dark)}
   .lede{font-size:19px;color:var(--ink-soft);margin-bottom:8px}
   .lede strong{color:var(--ink)}
 
   .progress-card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;margin:18px 0}
-  .bar{background:#eee3d8;border-radius:99px;height:14px;overflow:hidden;margin:10px 0 6px}
-  .fill{background:linear-gradient(90deg,var(--teal),#2e837e);height:100%;width:20%;border-radius:99px}
-  .raised{font-size:22px;font-weight:700;color:var(--teal)}
+  .bar{background:#e2ece2;border-radius:99px;height:14px;overflow:hidden;margin:10px 0 6px}
+  .fill{background:linear-gradient(90deg,var(--green-deep),#3f9668);height:100%;width:20%;border-radius:99px}
+  .raised{font-size:22px;font-weight:700;color:var(--green-deep)}
   .goal-note{font-size:14px;color:var(--ink-soft)}
 
-  .btn{display:block;text-align:center;background:var(--terracotta);color:#fff;text-decoration:none;
+  .btn{display:block;text-align:center;background:var(--green);color:#fff;text-decoration:none;
        font-size:18px;font-weight:700;padding:15px;border-radius:12px;margin:10px 0}
-  .btn:active{background:var(--terracotta-dark)}
-  .btn.secondary{background:var(--card);color:var(--teal);border:2px solid var(--teal)}
+  .btn:active{background:var(--green-dark)}
+  .btn.secondary{background:var(--card);color:var(--green-deep);border:2px solid var(--green-deep)}
 
-  h2{font-size:22px;margin:34px 0 12px;color:var(--teal)}
+  h2{font-size:22px;margin:34px 0 12px;color:var(--green-deep)}
   p{margin-bottom:14px}
-  .hook{font-size:19px;font-weight:700;color:var(--terracotta-dark);border-left:4px solid var(--terracotta);
+  .hook{font-size:19px;font-weight:700;color:var(--green-dark);border-left:4px solid var(--green);
         padding-left:12px;margin:18px 0}
 
   details.pay{background:var(--card);border:1px solid var(--line);border-radius:14px;margin:10px 0;overflow:hidden}
@@ -52,8 +52,8 @@
   .pay-body{padding:0 16px 16px;border-top:1px solid var(--line)}
   .amounts{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}
   .amounts span{background:var(--paper);border:1px solid var(--line);border-radius:99px;padding:6px 12px;font-size:14px}
-  .placeholder{border:2px dashed var(--terracotta);border-radius:10px;padding:12px;text-align:center;
-               color:var(--terracotta-dark);font-weight:600;background:#fdf3ef;margin:10px 0}
+  .placeholder{border:2px dashed var(--green);border-radius:10px;padding:12px;text-align:center;
+               color:var(--green-dark);font-weight:600;background:#eef6ee;margin:10px 0}
   .paynote{font-size:14px;color:var(--ink-soft)}
 
   figure{margin:16px 0}
@@ -68,12 +68,12 @@
   .update{background:var(--card);border-left:4px solid var(--ok);border-radius:0 12px 12px 0;padding:14px 16px;margin:12px 0}
   .update .date{font-size:13px;font-weight:700;color:var(--ok);text-transform:uppercase;letter-spacing:.4px}
 
-  .sticky{position:fixed;bottom:0;left:0;right:0;background:rgba(250,246,241,.95);backdrop-filter:blur(6px);
+  .sticky{position:fixed;bottom:0;left:0;right:0;background:rgba(245,248,244,.95);backdrop-filter:blur(6px);
           border-top:1px solid var(--line);padding:10px 18px calc(10px + env(safe-area-inset-bottom))}
   .sticky .btn{max-width:660px;margin:0 auto}
 
   footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);font-size:14px;color:var(--ink-soft);text-align:center}
-  footer a{color:var(--teal)}
+  footer a{color:var(--green-deep)}
 </style>
 </head>
 <body>
@@ -87,7 +87,7 @@
   <strong>La casa ya no está — la deuda con el banco sigue.</strong></p>
 </header>
 
-<img class="hero-img" src="img/familia.jpg" alt="Mabel Xiomara con sus tres hijos y su pareja frente a su casa en Circasia">
+<img class="hero-img" src="img/familia.jpg" alt="Mabel Xiomara con Arlex y sus tres hijos frente a su casa en Circasia">
 
 <div class="progress-card">
   <div class="raised">$3.000.000 COP recaudados</div>
@@ -105,7 +105,7 @@ familiares y amigos en Colombia, Alemania, Reino Unido, Australia y China.</p>
 <p>El <strong>10 de agosto de 2026 a las 7:34 de la mañana</strong>, el terremoto de magnitud 7,4 que sacudió
 a Colombia dejó gravemente dañada la casa de Mabel Xiomara en el barrio La Pilastra de
 <strong>Circasia, Quindío</strong>. Ella vivía allí con sus tres hijos — Matías (14), Gabriel y Joel (10) —
-y su pareja, el papá de los dos menores.</p>
+y su pareja, Arlex, el papá de los tres niños. Arlex también vivía en la casa.</p>
 
 <p>Es la casa que Mabel Xiomara construyó hace apenas dos años, con sus ahorros y un crédito de libre
 inversión. La familia vivía en el segundo piso mientras terminaba de construir el primero. El terremoto
@@ -121,7 +121,7 @@ $50 millones de pesos.</p>
 
 <h2>Quién es Mabel Xiomara</h2>
 <p>Muchos de ustedes la conocen: desde hace 10 años, cada diciembre, Mabel Xiomara reúne donaciones entre
-familiares y amigos para darle el aguinaldo a 20 niños de una fundación local. Lleva una década pidiendo
+familiares y amigos para darle el aguinaldo a 20 niños de la fundación INFAC. Lleva una década pidiendo
 por otros. <strong>Ahora es nuestro turno de ayudarle a ella</strong> — a pagar la deuda que quedó bajo los
 escombros, para que pueda empezar sin cadenas un nuevo plan de vivienda para sus hijos.</p>
 
@@ -137,8 +137,9 @@ escombros, para que pueda empezar sin cadenas un nuevo plan de vivienda para sus
 </div>
 
 <h2 id="donar">Cómo donar</h2>
-<p>Elige tu país — cada método lleva el dinero <strong>directamente a Mabel Xiomara</strong>. Cualquier
-aporte suma; entre muchos hacemos la diferencia.</p>
+<p>Elige tu país. Por Nequi el dinero llega <strong>directamente a Mabel Xiomara</strong>; las donaciones
+por PayPal, WeChat y Alipay las recibe su prima <strong>Natalia</strong>, quien transfiere todo lo recaudado
+a Mabel Xiomara y publica los comprobantes. Cualquier aporte suma; entre muchos hacemos la diferencia.</p>
 
 <details class="pay" open>
   <summary>🇨🇴 Colombia — Nequi <span class="chev">›</span></summary>
@@ -155,23 +156,27 @@ aporte suma; entre muchos hacemos la diferencia.</p>
     <div class="amounts"><span>€20</span><span>€55 ≈ una semana de cuota</span><span>€220 ≈ una cuota mensual</span><span>Otro monto</span></div>
     <div class="placeholder">[ ENLACE PAYPAL — muy pronto ]</div>
     <p class="paynote">PayPal acepta EUR, GBP y AUD. Elige "enviar a un amigo" para evitar comisiones.
-    Mabel Xiomara retira estos fondos directamente a su cuenta Nequi.</p>
+    La cuenta PayPal es de Natalia, prima de Mabel Xiomara: ella transfiere todo lo recaudado a la cuenta
+    Nequi de Mabel Xiomara y publica los comprobantes aquí.</p>
   </div>
 </details>
 
 <details class="pay">
-  <summary>🇨🇳 中国 — 微信 / 支付宝 <span class="chev">›</span></summary>
+  <summary>🇨🇳 China — WeChat / Alipay（微信 · 支付宝）<span class="chev">›</span></summary>
   <div class="pay-body">
     <div class="placeholder">[ CÓDIGO QR WECHAT / ALIPAY — muy pronto ]</div>
-    <p class="paynote">Las donaciones en China las recibe [NOMBRE], [relación con la familia], quien las
-    transfiere a Colombia y publica el comprobante en las actualizaciones.</p>
+    <p class="paynote">¿Estás en China? Puedes donar por WeChat o Alipay escaneando el código. Las
+    donaciones las recibe Natalia, prima de Mabel Xiomara, quien transfiere lo recaudado a Colombia y
+    publica los comprobantes en las actualizaciones.</p>
   </div>
 </details>
 
 <div class="trust">
   <h2 style="margin-top:0">Transparencia</h2>
   <ul>
-    <li>Las donaciones llegan <strong>directamente a la cuenta Nequi de Mabel Xiomara</strong>, sin intermediarios.</li>
+    <li>Las donaciones por Nequi llegan <strong>directamente a la cuenta de Mabel Xiomara</strong>, sin intermediarios.</li>
+    <li>Las donaciones por PayPal, WeChat y Alipay las recibe <strong>Natalia (su prima)</strong>, quien
+    transfiere todo lo recaudado a Mabel Xiomara y publica los comprobantes en esta página.</li>
     <li>Tenemos la <strong>notificación oficial de la Alcaldía</strong> (vivienda no habitable — evacuación). Publicaremos aquí una copia con los datos personales protegidos.</li>
     <li>Publicaremos <strong>actualizaciones con comprobantes</strong> de cada pago al banco.</li>
     <li>¿Preguntas? Escríbenos: <a href="mailto:nataliavallejomoreno@gmail.com">nataliavallejomoreno@gmail.com</a></li>
