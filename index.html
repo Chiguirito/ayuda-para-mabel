@@ -64,6 +64,11 @@
   .photo-strip img{width:82%;max-width:420px;flex-shrink:0;scroll-snap-align:center;
                    height:260px;object-fit:cover}
   .strip-hint{font-size:13px;color:var(--ink-soft);text-align:center;margin-top:-8px}
+  @media (min-width:700px){
+    .photo-strip{display:grid;grid-template-columns:repeat(3,1fr);overflow:visible}
+    .photo-strip img{width:100%;max-width:none;height:180px}
+    .strip-hint{display:none}
+  }
 
   .trust{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;margin:16px 0}
   .trust ul{padding-left:20px}
