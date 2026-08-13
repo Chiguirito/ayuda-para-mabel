@@ -8,6 +8,10 @@
 <meta property="og:title" content="Dona por WeChat / Alipay — Ayuda para Mabel Xiomara">
 <meta property="og:description" content="Su casa quedó inhabitable por el terremoto en Colombia. La deuda con el banco sigue. Escanea y ayuda.">
 <meta property="og:image" content="https://help-mabel.co/img/share-wechat.jpg">
+<meta property="og:url" content="https://help-mabel.co/wechat/">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💚</text></svg>">
+<link rel="canonical" href="https://help-mabel.co/wechat/">
 <style>
   :root{
     --green:#2f7d56; --green-dark:#256345; --green-deep:#1d4d38;
@@ -18,12 +22,24 @@
   body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
        background:var(--paper);color:var(--ink);line-height:1.6;font-size:17px}
   main{max-width:560px;margin:0 auto;padding:18px 18px 60px}
+  img{max-width:100%;display:block;border-radius:12px;height:auto}
   h1{font-size:26px;line-height:1.25;color:var(--green-dark);margin:10px 0}
   p{margin-bottom:14px}
+  .hero{width:100%;max-width:420px;margin:0 auto 14px}
+  .progress-card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px;margin:14px 0}
+  .bar{background:#e2ece2;border-radius:99px;height:12px;overflow:hidden;margin:8px 0 4px}
+  .fill{background:linear-gradient(90deg,var(--green-deep),#3f9668);height:100%;width:21.2%;border-radius:99px}
+  .raised{font-size:18px;font-weight:700;color:var(--green-deep)}
+  .goal-note{font-size:13px;color:var(--ink-soft)}
+  .zh{background:var(--card);border-left:4px solid var(--green);border-radius:0 12px 12px 0;padding:12px 14px;margin:14px 0;font-size:16px}
+  .amounts{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:12px 0}
+  .amounts em{font-style:normal;font-size:13px;color:var(--ink-soft);width:100%}
+  .amounts span{background:var(--card);border:1px solid var(--line);border-radius:99px;padding:6px 12px;font-size:14px}
   .qr{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px;margin:14px 0;text-align:center}
   .qr img{max-width:100%;border-radius:10px}
   .qr h2{font-size:19px;color:var(--green-deep);margin-bottom:8px}
-  .note{font-size:14px;color:var(--ink-soft)}
+  .note{font-size:14px;color:var(--ink-soft);margin-bottom:10px}
+  .note strong{color:var(--ink)}
   .btn{display:block;text-align:center;background:var(--green);color:#fff;text-decoration:none;
        font-size:17px;font-weight:700;padding:14px;border-radius:12px;margin:16px 0}
 </style>
@@ -31,26 +47,59 @@
 <body>
 <main>
   <h1>Ayuda para Mabel Xiomara 💚</h1>
+
+  <img class="hero" src="../img/familia.jpg" width="985" height="1400" alt="Mabel Xiomara con Arlex y sus tres hijos frente a su casa en Circasia">
+
   <p>El terremoto del 10 de agosto en Colombia dejó inhabitable la casa de Mabel Xiomara y su familia en
-  Circasia (Quindío). <strong>La casa ya no está — la deuda con el banco sigue.</strong></p>
-  <p>Puedes ayudar desde China escaneando cualquiera de estos códigos. Las donaciones las recibe
-  <strong>Natalia</strong>, su prima, quien transfiere todo lo recaudado a Colombia y publica los
-  comprobantes en la página de la campaña.</p>
+  Circasia (Quindío). <strong>La casa se perdió — la deuda con el banco sigue:</strong> $1.824.000 COP
+  cada mes, con un saldo de $89,4 millones.</p>
+
+  <div class="progress-card">
+    <div class="raised"><span id="raised-num">$3.182.400</span> COP recaudados</div>
+    <div class="bar"><div class="fill" id="bar-fill"></div></div>
+    <div class="goal-note">Primera meta: <span id="first-goal">$15.000.000</span> — unos 8 meses de cuotas</div>
+  </div>
+
+  <p>Las donaciones por WeChat y Alipay las recibe <strong>Natalia Vallejo</strong>, prima de Mabel
+  Xiomara, <strong>quien vive en China</strong> — por eso puede recibirlas — y transfiere todo lo
+  recaudado a Colombia, publicando los comprobantes en la página de la campaña.</p>
+
+  <div class="zh">哥伦比亚8月10日7.4级地震使Mabel Xiomara一家的房子无法居住，但银行贷款仍需偿还。她的表妹
+  Natalia住在中国，代收捐款后全部转到哥伦比亚，并公开转账凭证。<strong>长按下方二维码 →
+  识别图片中的二维码，即可直接付款。</strong>谢谢你的帮助！💚</div>
+
+  <div class="amounts"><em>Montos sugeridos — tú eliges la cantidad · 建议金额:</em><span>¥50</span><span>¥200</span><span>¥800 ≈ una semana de cuota · 一周还款</span><span>Otro monto</span></div>
 
   <div class="qr">
     <h2>WeChat Pay（微信支付）</h2>
-    <img src="../img/qr-wechat.jpg" alt="Código QR de WeChat Pay de Natalia">
+    <p class="note"><strong>En WeChat: mantén pulsado el código</strong> y elige «Extraer/identificar el
+    código QR» — se abre el pago directamente. Verás el nombre <strong>Natalia(***A)</strong>; si aparece
+    otro nombre, no pagues.</p>
+    <img src="../img/qr-wechat.jpg" width="663" height="900" alt="Código QR de WeChat Pay de Natalia" loading="lazy">
   </div>
 
   <div class="qr">
     <h2>Alipay（支付宝）</h2>
-    <img src="../img/qr-alipay.jpg" alt="Código QR de Alipay de Natalia">
+    <p class="note">Si estás viendo esto dentro de WeChat: <strong>guarda la imagen</strong> y ábrela desde
+    el escáner de Alipay（支付宝«扫一扫»相册）— WeChat no abre códigos de Alipay directamente. Verás el
+    nombre <strong>*NATALIA</strong>; si aparece otro nombre, no pagues.</p>
+    <img src="../img/qr-alipay.jpg" width="600" height="900" alt="Código QR de Alipay de Natalia" loading="lazy">
   </div>
 
-  <a class="btn" href="https://help-mabel.co/">Ver la historia completa y otras formas de donar →</a>
-  <p class="note">Si no puedes escanear (por ejemplo, viendo esto en el mismo teléfono), abre WeChat o
-  Alipay, usa "Escanear" y apunta a la pantalla de otra persona, o guarda la imagen del código y ábrela
-  desde el escáner de la app.</p>
+  <a class="btn" href="https://help-mabel.co/">Ver la historia completa, fotos y comprobantes →</a>
+  <p class="note">¿Preguntas? Escríbenos: <a href="#" onclick="var m=['nataliavallejomoreno','gmail.com'].join('@');this.textContent=m;this.href='mailto:'+m;this.onclick=null;return false" style="color:var(--green-deep)">mostrar correo de contacto</a></p>
 </main>
+
+<script src="../data.js"></script>
+<script>
+(function(){
+  var c = window.CAMPAIGN; if (!c) return;
+  var pct = Math.round(c.raised / c.firstGoal * 1000) / 10;
+  var f = function(n){ return "$" + n.toLocaleString("es-CO"); };
+  document.getElementById("raised-num").textContent = f(c.raised);
+  document.getElementById("bar-fill").style.width = Math.min(pct, 100) + "%";
+  document.getElementById("first-goal").textContent = f(c.firstGoal);
+})();
+</script>
 </body>
 </html>
