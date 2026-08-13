@@ -55,6 +55,7 @@
   .placeholder{border:2px dashed var(--green);border-radius:10px;padding:12px;text-align:center;
                color:var(--green-dark);font-weight:600;background:#eef6ee;margin:10px 0}
   .paynote{font-size:14px;color:var(--ink-soft)}
+  .nequi-num{font-size:26px;font-weight:800;color:var(--green-deep);text-align:center;letter-spacing:2px;margin:12px 0 4px}
   .qr-row{display:flex;gap:10px;margin:12px 0}
   .qr-row a{flex:1}
   .qr-row img{width:100%;border:1px solid var(--line);border-radius:10px}
@@ -93,8 +94,6 @@
 </style>
 </head>
 <body>
-
-<div class="draft">⚠️ Versión preliminar — los datos de pago se publicarán muy pronto</div>
 
 <main>
 <header>
@@ -161,9 +160,11 @@ a Mabel Xiomara y publica los comprobantes. Cualquier aporte suma; entre muchos 
 <details class="pay" open>
   <summary>🇨🇴 Colombia — Nequi <span class="chev">›</span></summary>
   <div class="pay-body">
-    <div class="amounts"><span>$50.000</span><span>$450.000 ≈ una semana de cuotas</span><span>$1.824.000 = un mes de cuotas</span><span>Otro monto</span></div>
-    <div class="placeholder">[ NÚMERO NEQUI — muy pronto ]</div>
-    <p class="paynote">Cuenta Nequi a nombre de Mabel Xiomara Moreno Vallejo. El dinero llega directo a ella.</p>
+    <div class="amounts"><span>$20.000</span><span>$50.000</span><span>$100.000</span><span>Otro monto</span></div>
+    <div class="nequi-num">313 653 3481</div>
+    <a class="btn secondary" href="#" onclick="navigator.clipboard.writeText('3136533481');this.textContent='¡Número copiado!';return false">Copiar número Nequi</a>
+    <p class="paynote">Cuenta Nequi a nombre de Mabel Xiomara Moreno Vallejo — el dinero llega directo a
+    ella. Cada $450.000 cubren una semana de cuotas del crédito; $1.824.000, un mes completo.</p>
   </div>
 </details>
 
@@ -212,8 +213,8 @@ a Mabel Xiomara y publica los comprobantes. Cualquier aporte suma; entre muchos 
 <div class="update">
   <div class="date">13 de agosto de 2026</div>
   <p style="margin:6px 0 0">¡Arrancamos! Entre familiares y amigos cercanos ya reunimos los primeros
-  <strong>$3.182.400</strong>. Gracias de corazón — cada aporte nos acerca a que Mabel Xiomara y los
-  niños empiecen de nuevo sin deudas.</p>
+  <strong>$3.182.400</strong>. Gracias de corazón — cada aporte nos acerca a que Mabel Xiomara y su
+  familia empiecen de nuevo sin deudas.</p>
 </div>
 
 <h2 id="compartir">Si no puedes donar, comparte</h2>
