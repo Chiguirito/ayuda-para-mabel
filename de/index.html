@@ -105,8 +105,8 @@
 <div class="progress-card">
   <div class="raised"><span id="raised-num">3.182.400 COP</span> gesammelt <span id="raised-pct" style="font-size:16px;color:var(--ink-soft);font-weight:600">· 21 % des ersten Ziels</span></div>
   <div class="bar"><div class="fill" id="bar-fill"></div></div>
-  <div class="goal-note"><strong>Erstes Ziel: <span id="first-goal">15.000.000 COP</span></strong> — rund 8 Monatsraten (≈ 3.300 €)</div>
-  <div class="goal-note" id="due-line" style="margin-top:6px;color:var(--green-dark);font-weight:700">Die nächste Rate über 1.824.000 COP (≈ 400 €) ist am 15. August fällig.</div>
+  <div class="goal-note"><strong>Erstes Ziel: <span id="first-goal">15.000.000 COP</span></strong> — rund 8 Monatsraten (≈ 4.100 €)</div>
+  <div class="goal-note" id="due-line" style="margin-top:6px;color:var(--green-dark);font-weight:700">Die nächste Rate über 1.824.000 COP (≈ 500 €) ist am 15. August fällig.</div>
 </div>
 
 <a class="btn" href="#spenden">💚 Ich möchte spenden</a>
@@ -133,8 +133,8 @@ musste. Sie können nicht zurück — und die Stadtverwaltung hat ihnen auch mit
 Grundstück nicht wieder bauen dürfen. Die Familie muss woanders neu anfangen.</p>
 
 <p class="hook">Die Kredite waren frei verwendbare Darlehen, ohne Versicherung gegen Naturkatastrophen.
-Mabel Xiomara muss weiterhin 1.824.000 COP (≈ 400 €) im Monat zahlen — für ein Haus, in dem sie nicht
-mehr wohnen kann. Die offene Schuld: 89,4 Millionen Pesos (≈ 19.650 €), verteilt auf zwei Kredite über
+Mabel Xiomara muss weiterhin 1.824.000 COP (≈ 500 €) im Monat zahlen — für ein Haus, in dem sie nicht
+mehr wohnen kann. Die offene Schuld: 89,4 Millionen Pesos (≈ 24.600 €), verteilt auf zwei Kredite über
 rund 29 und 60 Millionen.</p>
 
 <p>Heute schlafen alle fünf in einem einzigen Zimmer — im Haus von Mabel Xiomaras Großmutter.</p>
@@ -165,7 +165,7 @@ weiterleitet und die Belege veröffentlicht. Jeder Beitrag zählt — gemeinsam 
 <details class="pay" open>
   <summary>🌍 Rest der Welt — PayPal (Europa, Amerika, Australien…) <span class="chev">›</span></summary>
   <div class="pay-body">
-    <div class="amounts"><em>Vorschläge — den Betrag wählst du selbst:</em><span>25 €</span><span>100 € ≈ eine Woche der Monatsrate</span><span>400 € ≈ eine Monatsrate</span><span>Beliebiger Betrag</span></div>
+    <div class="amounts"><em>Vorschläge — den Betrag wählst du selbst:</em><span>25 €</span><span>125 € ≈ eine Woche der Monatsrate</span><span>500 € ≈ eine Monatsrate</span><span>Beliebiger Betrag</span></div>
     <p class="paynote">Du kommst zum PayPal-Spendentopf von Natalia — sie ist dort als Organisatorin
     angegeben. Das ist richtig.</p>
     <a class="btn" href="https://www.paypal.com/pool/9rJmHZsW9a" target="_blank" rel="noopener">Über PayPal spenden</a>
@@ -237,7 +237,7 @@ weiterleitet und die Belege veröffentlicht. Jeder Beitrag zählt — gemeinsam 
 <div class="update">
   <div class="date">13. August 2026</div>
   <p style="margin:6px 0 0">Es geht los! Familie und enge Freunde haben bereits die ersten
-  <strong>3.182.400 COP (≈ 700 €)</strong> gesammelt. Danke von Herzen — jeder Beitrag bringt
+  <strong>3.182.400 COP (≈ 880 €)</strong> gesammelt. Danke von Herzen — jeder Beitrag bringt
   Mabel Xiomara und ihre Familie einem schuldenfreien Neuanfang näher.</p>
 </div>
 
@@ -276,9 +276,9 @@ einen Chat oder deine Moments（朋友圈）ein und sende sie.</p>
     var dstr = due.toLocaleDateString("de-DE", {day: "numeric", month: "long"});
     var dl = document.getElementById("due-line");
     if (!isFinite(days)) { }
-    else if (days > 1) dl.textContent = "Die nächste Rate über 1.824.000 COP (≈ 400 €) ist am " + dstr + " fällig — in " + days + " Tagen.";
-    else if (days === 1) dl.textContent = "Die nächste Rate über 1.824.000 COP (≈ 400 €) ist morgen fällig, am " + dstr + ".";
-    else if (days === 0) dl.textContent = "Die nächste Rate über 1.824.000 COP (≈ 400 €) ist heute fällig.";
+    else if (days > 1) dl.textContent = "Die nächste Rate über 1.824.000 COP (≈ 500 €) ist am " + dstr + " fällig — in " + days + " Tagen.";
+    else if (days === 1) dl.textContent = "Die nächste Rate über 1.824.000 COP (≈ 500 €) ist morgen fällig, am " + dstr + ".";
+    else if (days === 0) dl.textContent = "Die nächste Rate über 1.824.000 COP (≈ 500 €) ist heute fällig.";
     else dl.style.display = "none";
   }
 })();
