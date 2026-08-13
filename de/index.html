@@ -259,14 +259,14 @@ einen Chat oder deine Moments（朋友圈）ein und sende sie.</p>
 
 <div class="sticky"><a class="btn" href="#spenden">💚 Jetzt spenden</a></div>
 
-<script src="../data.js"></script>
+<script src="../data.js?v=2"></script>
 <script>
 (function(){
   var c = window.CAMPAIGN; if (!c) return;
   var pct = Math.round(c.raised / c.firstGoal * 1000) / 10;
   var f = function(n){ return n.toLocaleString("de-DE") + " COP"; };
-  var eur = Math.round(c.raised / c.copPerEur / 10) * 10;
-  document.getElementById("raised-num").textContent = f(c.raised) + " (≈ " + eur.toLocaleString("de-DE") + " €)";
+  var eur = (c.copPerEur > 0) ? Math.round(c.raised / c.copPerEur / 10) * 10 : 0;
+  document.getElementById("raised-num").textContent = f(c.raised) + (eur > 0 ? " (≈ " + eur.toLocaleString("de-DE") + " €)" : "");
   document.getElementById("raised-pct").textContent = "· " + pct.toLocaleString("de-DE") + " % des ersten Ziels";
   document.getElementById("bar-fill").style.width = Math.min(pct, 100) + "%";
   document.getElementById("first-goal").textContent = f(c.firstGoal);
@@ -275,7 +275,8 @@ einen Chat oder deine Moments（朋友圈）ein und sende sie.</p>
     var days = Math.ceil((due - new Date()) / 86400000);
     var dstr = due.toLocaleDateString("de-DE", {day: "numeric", month: "long"});
     var dl = document.getElementById("due-line");
-    if (days > 1) dl.textContent = "Die nächste Rate über 1.824.000 COP (≈ 400 €) ist am " + dstr + " fällig — in " + days + " Tagen.";
+    if (!isFinite(days)) { }
+    else if (days > 1) dl.textContent = "Die nächste Rate über 1.824.000 COP (≈ 400 €) ist am " + dstr + " fällig — in " + days + " Tagen.";
     else if (days === 1) dl.textContent = "Die nächste Rate über 1.824.000 COP (≈ 400 €) ist morgen fällig, am " + dstr + ".";
     else if (days === 0) dl.textContent = "Die nächste Rate über 1.824.000 COP (≈ 400 €) ist heute fällig.";
     else dl.style.display = "none";

@@ -273,7 +273,7 @@ un chat o en Momentos（朋友圈）y envíalo.</p>
 
 <div class="sticky"><a class="btn" href="#donar">💚 Donar ahora</a></div>
 
-<script src="data.js"></script>
+<script src="data.js?v=2"></script>
 <script>
 (function(){
   var c = window.CAMPAIGN; if (!c) return;
@@ -288,7 +288,8 @@ un chat o en Momentos（朋友圈）y envíalo.</p>
     var days = Math.ceil((due - new Date()) / 86400000);
     var dstr = due.toLocaleDateString("es-CO", {day: "numeric", month: "long"});
     var dl = document.getElementById("due-line");
-    if (days > 1) dl.textContent = "La próxima cuota de $1.824.000 vence el " + dstr + " — faltan " + days + " días.";
+    if (!isFinite(days)) { }
+    else if (days > 1) dl.textContent = "La próxima cuota de $1.824.000 vence el " + dstr + " — faltan " + days + " días.";
     else if (days === 1) dl.textContent = "La próxima cuota de $1.824.000 vence mañana, " + dstr + ".";
     else if (days === 0) dl.textContent = "La próxima cuota de $1.824.000 vence hoy.";
     else dl.style.display = "none";
