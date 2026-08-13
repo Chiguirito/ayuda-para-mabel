@@ -250,6 +250,7 @@ weiterleitet und die Belege veröffentlicht. Jeder Beitrag zählt — gemeinsam 
 
 <h2 id="teilen">Du kannst nicht spenden? Teile die Seite</h2>
 <p>Teilen hilft genauso. Eine Nachricht von dir erreicht Menschen, die wir nicht erreichen.</p>
+<a class="btn secondary" href="#" onclick="return shareStory(this)">📣 In deiner Story teilen (WhatsApp / Instagram)</a>
 <a class="btn secondary" href="https://wa.me/?text=Das%20Haus%20von%20Mabel%20Xiomara%20in%20Circasia%20(Kolumbien)%20wurde%20durch%20das%20Erdbeben%20am%2010.%20August%20unbewohnbar%20%E2%80%94%20die%20Bankschulden%20bleiben.%20Ihre%20Familie%20sammelt%20hier%20Hilfe%3A%20https%3A%2F%2Fhelp-mabel.co%2Fde%2F" target="_blank" rel="noopener">Auf WhatsApp teilen</a>
 <a class="btn secondary" href="#" onclick="return shareWeChat(this)">Auf WeChat teilen（微信）</a>
 <a class="btn secondary" href="#" onclick="return copyText(location.href,this,'Link kopiert!')">Link kopieren</a>
@@ -289,6 +290,22 @@ einen Chat oder deine Moments（朋友圈）ein und sende sie.</p>
     else dl.style.display = "none";
   }
 })();
+function shareStory(el){
+  var orig = el.textContent;
+  el.textContent = "Bild wird vorbereitet…";
+  fetch("../img/story-de.jpg").then(function(r){ return r.blob(); }).then(function(b){
+    var f = new File([b], "hilfe-mabel.jpg", {type: "image/jpeg"});
+    if (navigator.canShare && navigator.canShare({files: [f]})) {
+      navigator.share({files: [f], text: "Das Haus von Mabel Xiomara in Kolumbien ist durch das Erdbeben verloren, aber die Bankschulden bleiben. So kannst du helfen: https://help-mabel.co/de/"})
+        .then(function(){ el.textContent = "Danke fürs Teilen! 💚"; })
+        .catch(function(){ el.textContent = orig; });
+    } else {
+      el.textContent = "Speichere das Bild und poste es in deiner Story 📲";
+      window.open("../img/story-de.jpg", "_blank");
+    }
+  }).catch(function(){ el.textContent = orig; window.open("../img/story-de.jpg", "_blank"); });
+  return false;
+}
 function copyText(t, el, ok){
   try {
     if (navigator.clipboard && navigator.clipboard.writeText) {

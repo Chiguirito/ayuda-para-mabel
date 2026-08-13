@@ -247,6 +247,7 @@ Mabel Xiomara and posts the receipts. Every contribution counts — together we 
 
 <h2 id="share">Can't donate? Share</h2>
 <p>Sharing this page helps just as much. A message from you reaches people we can't.</p>
+<a class="btn secondary" href="#" onclick="return shareStory(this)">📣 Share to your story (WhatsApp / Instagram)</a>
 <a class="btn secondary" href="https://wa.me/?text=Mabel%20Xiomara%27s%20home%20in%20Circasia%2C%20Colombia%20was%20left%20uninhabitable%20by%20the%2010%20August%20earthquake%2C%20but%20her%20bank%20debt%20remains.%20Her%20family%20is%20raising%20funds%20here%3A%20https%3A%2F%2Fhelp-mabel.co%2Fen%2F" target="_blank" rel="noopener">Share on WhatsApp</a>
 <a class="btn secondary" href="#" onclick="return shareWeChat(this)">Share on WeChat（微信）</a>
 <a class="btn secondary" href="#" onclick="return copyText(location.href,this,'Link copied!')">Copy link</a>
@@ -286,6 +287,22 @@ chat or your Moments（朋友圈）and send.</p>
     else dl.style.display = "none";
   }
 })();
+function shareStory(el){
+  var orig = el.textContent;
+  el.textContent = "Preparing image…";
+  fetch("../img/story-en.jpg").then(function(r){ return r.blob(); }).then(function(b){
+    var f = new File([b], "help-mabel.jpg", {type: "image/jpeg"});
+    if (navigator.canShare && navigator.canShare({files: [f]})) {
+      navigator.share({files: [f], text: "Mabel Xiomara's home in Colombia was lost in the earthquake, but the bank debt remains. How to help: https://help-mabel.co/en/"})
+        .then(function(){ el.textContent = "Thanks for sharing! 💚"; })
+        .catch(function(){ el.textContent = orig; });
+    } else {
+      el.textContent = "Save the image and post it to your story 📲";
+      window.open("../img/story-en.jpg", "_blank");
+    }
+  }).catch(function(){ el.textContent = orig; window.open("../img/story-en.jpg", "_blank"); });
+  return false;
+}
 function copyText(t, el, ok){
   try {
     if (navigator.clipboard && navigator.clipboard.writeText) {

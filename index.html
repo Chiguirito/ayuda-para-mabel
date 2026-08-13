@@ -264,6 +264,7 @@ Cualquier aporte suma; entre todos marcamos la diferencia.</p>
 
 <h2 id="compartir">Si no puedes donar, comparte</h2>
 <p>Compartir esta página ayuda igual. Un mensaje tuyo llega donde nosotros no llegamos.</p>
+<a class="btn secondary" href="#" onclick="return shareStory(this)">📣 Compartir en tu estado (WhatsApp / Instagram)</a>
 <a class="btn secondary" href="https://wa.me/?text=La%20casa%20de%20Mabel%20Xiomara%20en%20Circasia%20qued%C3%B3%20inhabitable%20por%20el%20terremoto%20del%2010%20de%20agosto%2C%20pero%20la%20deuda%20con%20el%20banco%20sigue.%20Su%20familia%20est%C3%A1%20reuniendo%20ayuda%20aqu%C3%AD%3A%20https%3A%2F%2Fhelp-mabel.co" target="_blank" rel="noopener">Compartir por WhatsApp</a>
 <a class="btn secondary" href="#" onclick="return shareWeChat(this)">Compartir en WeChat（微信）</a>
 <a class="btn secondary" href="#" onclick="return copyText(location.href,this,'¡Enlace copiado!')">Copiar enlace</a>
@@ -305,6 +306,22 @@ un chat o en Momentos（朋友圈）y envíalo.</p>
   if (l.indexOf("en") === 0) { s.innerHTML = 'This page is also available in <a href="en/">English →</a>'; s.style.display = "block"; }
   else if (l.indexOf("de") === 0) { s.innerHTML = 'Diese Seite gibt es auch auf <a href="de/">Deutsch →</a>'; s.style.display = "block"; }
 })();
+function shareStory(el){
+  var orig = el.textContent;
+  el.textContent = "Preparando imagen…";
+  fetch("img/story-es.jpg").then(function(r){ return r.blob(); }).then(function(b){
+    var f = new File([b], "ayuda-mabel.jpg", {type: "image/jpeg"});
+    if (navigator.canShare && navigator.canShare({files: [f]})) {
+      navigator.share({files: [f], text: "La casa de Mabel Xiomara en Circasia se perdió en el terremoto, pero la deuda con el banco sigue. Cómo ayudar: https://help-mabel.co"})
+        .then(function(){ el.textContent = "¡Gracias por compartir! 💚"; })
+        .catch(function(){ el.textContent = orig; });
+    } else {
+      el.textContent = "Guarda la imagen y súbela a tu estado 📲";
+      window.open("img/story-es.jpg", "_blank");
+    }
+  }).catch(function(){ el.textContent = orig; window.open("img/story-es.jpg", "_blank"); });
+  return false;
+}
 function copyText(t, el, ok){
   try {
     if (navigator.clipboard && navigator.clipboard.writeText) {
