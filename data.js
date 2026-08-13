@@ -4,7 +4,7 @@
 // Browser Cache TTL de Cloudflare siga en 4h, es la única forma de que los
 // navegadores con caché vieja carguen el archivo nuevo. Versión actual: v=3.
 window.CAMPAIGN = {
-  raised: 3182400,              // COP recaudados
+  raised: 5105000,              // COP recaudados (PayPal €1.342 + WeChat ¥500; Nequi pendiente)
   firstGoal: 15000000,          // primera meta COP
   finalGoal: 89400000,          // deuda total exacta COP
   copPerEur: 3630,              // tasa COP por EUR (verificada 13 ago 2026; revisar mensualmente)
