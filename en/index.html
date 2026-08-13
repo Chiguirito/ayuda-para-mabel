@@ -59,10 +59,14 @@
   .amounts em{font-style:normal;font-size:13px;color:var(--ink-soft);width:100%}
   .amounts span{background:var(--paper);border:1px solid var(--line);border-radius:99px;padding:6px 12px;font-size:14px}
   .paynote{font-size:14px;color:var(--ink-soft)}
-  .nequi-num{font-size:26px;font-weight:800;color:var(--green-deep);text-align:center;letter-spacing:2px;margin:12px 0 4px}
-  .qr-row{display:flex;gap:10px;margin:12px 0}
-  .qr-row a{flex:1}
-  .qr-row img{width:100%;border:1px solid var(--line);border-radius:10px}
+  .pm-row{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid var(--line)}
+  .pm-row:last-of-type{border-bottom:none}
+  .pm-val{font-size:20px;font-weight:800;color:var(--green-deep);letter-spacing:1px}
+  .pm-note{font-size:13px;color:var(--ink-soft)}
+  .btn-mini{flex-shrink:0;background:var(--card);color:var(--green-deep);border:2px solid var(--green-deep);
+            border-radius:10px;padding:8px 14px;font-size:14px;font-weight:700;text-decoration:none;text-align:center}
+  .qr-single{max-width:320px;margin:12px auto}
+  .qr-single img{width:100%;border:1px solid var(--line);border-radius:10px}
   figure{margin:16px 0}
   figcaption{font-size:14px;color:var(--ink-soft);padding-top:6px}
   .photo-strip{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:10px;
@@ -156,8 +160,8 @@ for her sons, free of that burden.</p>
 <p class="strip-hint">Swipe to see more photos →</p>
 
 <h2 id="donate">How to donate</h2>
-<p>Choose your option. Nequi donations go <strong>directly to Mabel Xiomara</strong>; donations via PayPal,
-WeChat and Alipay are received by her cousin <strong>Natalia</strong>, who forwards everything to
+<p>Choose your option. Nequi donations go <strong>directly to Mabel Xiomara</strong>; donations via PayPal
+and Alipay are received by her cousin <strong>Natalia</strong>, who forwards everything to
 Mabel Xiomara and posts the receipts. Every contribution counts — together we can make a difference.</p>
 
 <details class="pay" open>
@@ -176,42 +180,56 @@ Mabel Xiomara and posts the receipts. Every contribution counts — together we 
 </details>
 
 <details class="pay">
-  <summary>🇨🇴 Colombia — Nequi <span class="chev">›</span></summary>
+  <summary>🇨🇴 Colombia — Nequi · Bre-B · Bancolombia <span class="chev">›</span></summary>
   <div class="pay-body">
     <div class="amounts"><em>Suggested amounts — you choose how much to transfer:</em><span>20,000 COP</span><span>50,000 COP</span><span>100,000 COP</span><span>Any amount</span></div>
-    <div class="nequi-num">313 653 3481</div>
-    <a class="btn secondary" href="#" onclick="return copyText('3136533481',this,'Copied! Open Nequi → Envía plata → paste')">Copy Nequi number</a>
-    <p class="paynote">1. Copy the number · 2. Open Nequi → "Envía plata" · 3. Paste and choose your amount</p>
-    <p class="paynote">Nequi account in the name of Mabel Xiomara Moreno Vallejo — the money goes directly
-    to her. Before you confirm, Nequi shows you the account holder's name: check that it says
-    <strong>Mabel Xiomara M.</strong> Every 456,000 COP covers one week of the monthly payment;
-    1,824,000 COP the full month.</p>
+    <div class="pm-row">
+      <div><strong>📱 Nequi or Bre-B (mobile)</strong><br><span class="pm-val">313 653 3481</span><br>
+      <span class="pm-note">From Nequi or any bank app via Bre-B</span></div>
+      <a class="btn-mini" href="#" onclick="return copyText('3136533481',this,'Copied!')">Copy</a>
+    </div>
+    <div class="pm-row">
+      <div><strong>🔑 Bre-B key (llave)</strong><br><span class="pm-val">@mabel065</span><br>
+      <span class="pm-note">From any Colombian bank app (Bancolombia, Davivienda, Nu…)</span></div>
+      <a class="btn-mini" href="#" onclick="return copyText('@mabel065',this,'Copied!')">Copy</a>
+    </div>
+    <div class="pm-row">
+      <div><strong>🏦 Bancolombia account</strong><br><span class="pm-val">06983944823</span><br>
+      <span class="pm-note">Traditional bank transfer</span></div>
+      <a class="btn-mini" href="#" onclick="return copyText('06983944823',this,'Copied!')">Copy</a>
+    </div>
+    <p class="paynote">All accounts are in the name of <strong>Mabel Xiomara Moreno Vallejo</strong> —
+    check the name before confirming. The money goes directly to her. If your bank asks for the account
+    holder's ID number, <a href="#" onclick="return revealMail(this)">write to us</a>. Every 456,000 COP
+    covers one week of the monthly payment; 1,824,000 COP the full month.</p>
     <p class="paynote">Just donated? Thank you so much! 💚 <a href="#share">Sharing this page</a> is worth
     as much as another donation.</p>
   </div>
 </details>
 
 <details class="pay">
-  <summary>🇨🇳 China — WeChat / Alipay（微信 · 支付宝）<span class="chev">›</span></summary>
+  <summary>🇨🇳 China — Alipay（支付宝）<span class="chev">›</span></summary>
   <div class="pay-body">
-    <div class="qr-row">
-      <a href="../img/qr-wechat.jpg" target="_blank" rel="noopener"><img src="../img/qr-wechat.jpg" alt="Natalia's WeChat Pay QR code" loading="lazy"></a>
-      <a href="../img/qr-alipay.jpg" target="_blank" rel="noopener"><img src="../img/qr-alipay.jpg" alt="Natalia's Alipay QR code" loading="lazy"></a>
+    <div class="qr-single">
+      <a href="../img/qr-alipay.jpg" target="_blank" rel="noopener"><img src="../img/qr-alipay.jpg" width="600" height="900" alt="Natalia's Alipay QR code" loading="lazy"></a>
     </div>
-    <p class="paynote">In China? Scan the code with WeChat or Alipay (tap to enlarge). Donations are
+    <p class="paynote">In China? Scan the code with Alipay (tap to enlarge). Donations are
     received by Natalia, Mabel Xiomara's cousin, <strong>who lives in China</strong> — which is
-    why she can receive via WeChat and Alipay — and transfers everything to Colombia, posting the
+    why she can receive them — and transfers everything to Colombia, posting the
     receipts in the updates.</p>
-    <p class="paynote">When you scan, you'll see the name <strong>Natalia(***A)</strong> on WeChat and
-    <strong>*NATALIA</strong> on Alipay — if another name appears, don't pay.</p>
+    <p class="paynote">When you scan, you'll see the name <strong>*NATALIA</strong> — if another name
+    appears, don't pay.</p>
   </div>
 </details>
+
+<p class="paynote">Prefer a regular bank transfer, WeChat, or another way to send your donation?
+<a href="#" onclick="return revealMail(this)">Contact us</a> and we'll share the details.</p>
 
 <div class="trust">
   <h2 style="margin-top:0">Transparency</h2>
   <ul>
     <li>Nequi donations go <strong>directly to Mabel Xiomara's account</strong>, no intermediaries.</li>
-    <li>PayPal, WeChat and Alipay donations are received by <strong>Natalia (her cousin, who
+    <li>PayPal, Alipay and bank-transfer donations are received by <strong>Natalia (her cousin, who
     lives in China)</strong>, who forwards everything to Mabel Xiomara and posts the receipts on this
     page.</li>
     <li>The debt is two personal loans with payments of 608,000 and 1,216,000 COP per month —
@@ -332,7 +350,7 @@ function revealMail(el){
   return false;
 }
 function shareWeChat(el){
-  var msg = "Mabel Xiomara's home in Circasia, Colombia was left uninhabitable by the 10 August earthquake, but her bank debt remains. You can help via WeChat or Alipay here: https://help-mabel.co/wechat/";
+  var msg = "Mabel Xiomara's home in Circasia, Colombia was left uninhabitable by the 10 August earthquake, but her bank debt remains. You can help via Alipay here: https://help-mabel.co/wechat/";
   document.getElementById("wechat-tip").style.display = "block";
   return copyText(msg, el, "Message copied for WeChat!");
 }
