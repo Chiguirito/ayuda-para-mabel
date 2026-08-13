@@ -50,7 +50,8 @@
   details.pay summary .chev{margin-left:auto;transition:transform .2s}
   details.pay[open] summary .chev{transform:rotate(90deg)}
   .pay-body{padding:0 16px 16px;border-top:1px solid var(--line)}
-  .amounts{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}
+  .amounts{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:12px 0}
+  .amounts em{font-style:normal;font-size:13px;color:var(--ink-soft);width:100%}
   .amounts span{background:var(--paper);border:1px solid var(--line);border-radius:99px;padding:6px 12px;font-size:14px}
   .placeholder{border:2px dashed var(--green);border-radius:10px;padding:12px;text-align:center;
                color:var(--green-dark);font-weight:600;background:#eef6ee;margin:10px 0}
@@ -160,7 +161,7 @@ a Mabel Xiomara y publica los comprobantes. Cualquier aporte suma; entre muchos 
 <details class="pay" open>
   <summary>🇨🇴 Colombia — Nequi <span class="chev">›</span></summary>
   <div class="pay-body">
-    <div class="amounts"><span>$20.000</span><span>$50.000</span><span>$100.000</span><span>Otro monto</span></div>
+    <div class="amounts"><em>Montos sugeridos — tú eliges la cantidad al transferir:</em><span>$20.000</span><span>$50.000</span><span>$100.000</span><span>Otro monto</span></div>
     <div class="nequi-num">313 653 3481</div>
     <a class="btn secondary" href="#" onclick="navigator.clipboard.writeText('3136533481');this.textContent='¡Número copiado!';return false">Copiar número Nequi</a>
     <p class="paynote">Cuenta Nequi a nombre de Mabel Xiomara Moreno Vallejo — el dinero llega directo a
@@ -171,7 +172,7 @@ a Mabel Xiomara y publica los comprobantes. Cualquier aporte suma; entre muchos 
 <details class="pay">
   <summary>🇩🇪 🇬🇧 🇦🇺 Europa y Australia — PayPal <span class="chev">›</span></summary>
   <div class="pay-body">
-    <div class="amounts"><span>€25</span><span>€100 ≈ una semana de cuotas</span><span>€400 ≈ un mes de cuotas</span><span>Otro monto</span></div>
+    <div class="amounts"><em>Montos sugeridos — tú eliges la cantidad al donar:</em><span>€25</span><span>€100 ≈ una semana de cuotas</span><span>€400 ≈ un mes de cuotas</span><span>Otro monto</span></div>
     <a class="btn" href="https://www.paypal.com/pool/9rJmHZsW9a" target="_blank" rel="noopener">Donar por PayPal</a>
     <p class="paynote">PayPal acepta EUR, GBP y AUD. El bote (pool) es de Natalia, prima de Mabel Xiomara:
     ella transfiere todo lo recaudado a la cuenta Nequi de Mabel Xiomara y publica los comprobantes aquí.</p>
