@@ -8,6 +8,10 @@
 <meta property="og:title" content="Ayuda para Mabel Xiomara">
 <meta property="og:description" content="Su casa quedó inhabitable por el terremoto. La deuda con el banco sigue. Entre todos hacemos la diferencia.">
 <meta property="og:image" content="https://help-mabel.co/img/share-og.jpg">
+<link rel="canonical" href="https://help-mabel.co/">
+<link rel="alternate" hreflang="es" href="https://help-mabel.co/">
+<link rel="alternate" hreflang="en" href="https://help-mabel.co/en/">
+<link rel="alternate" hreflang="de" href="https://help-mabel.co/de/">
 <style>
   :root{
     --green:#2f7d56; --green-dark:#256345; --green-deep:#1d4d38;
@@ -23,6 +27,11 @@
   .draft{background:#8a6d1f;color:#fff;text-align:center;font-size:14px;padding:8px 14px}
 
   header{padding:18px 0 6px}
+  .langbar{display:flex;justify-content:flex-end;gap:12px;padding:12px 0 0;font-size:14px}
+  .langbar a{color:var(--ink-soft);text-decoration:none}
+  .langbar strong{color:var(--green-deep)}
+  .langsuggest{background:var(--green-deep);color:#fff;text-align:center;font-size:14px;padding:8px 14px}
+  .langsuggest a{color:#bdf3d3;font-weight:700}
   .hero-img{width:100%;max-width:500px;margin:0 auto}
   h1{font-size:30px;line-height:1.2;margin:18px 0 8px;color:var(--green-dark)}
   .lede{font-size:19px;color:var(--ink-soft);margin-bottom:8px}
@@ -96,7 +105,9 @@
 </head>
 <body>
 
+<div class="langsuggest" id="langsuggest" style="display:none"></div>
 <main>
+<nav class="langbar"><strong>Español</strong> <a href="en/">English</a> <a href="de/">Deutsch</a></nav>
 <header>
   <h1>Ayudemos a Mabel Xiomara a empezar de nuevo</h1>
   <p class="lede">El terremoto del 10 de agosto dejó su casa en Circasia (Quindío) inhabitable.
@@ -106,9 +117,9 @@
 <img class="hero-img" src="img/familia.jpg" alt="Mabel Xiomara con Arlex y sus tres hijos frente a su casa en Circasia">
 
 <div class="progress-card">
-  <div class="raised">$3.182.400 COP recaudados <span style="font-size:16px;color:var(--ink-soft);font-weight:600">· 21% de la primera meta</span></div>
-  <div class="bar"><div class="fill"></div></div>
-  <div class="goal-note"><strong>Primera meta: $15.000.000</strong> (unos 8 meses de cuotas) · Meta final: $90.000.000 — la deuda completa</div>
+  <div class="raised"><span id="raised-num">$3.182.400</span> COP recaudados <span id="raised-pct" style="font-size:16px;color:var(--ink-soft);font-weight:600">· 21% de la primera meta</span></div>
+  <div class="bar"><div class="fill" id="bar-fill"></div></div>
+  <div class="goal-note"><strong>Primera meta: <span id="first-goal">$15.000.000</span></strong> (unos 8 meses de cuotas) · Meta final: <span id="final-goal">$90.000.000</span> — la deuda completa</div>
 </div>
 
 <a class="btn" href="#donar">💚 Quiero donar</a>
@@ -236,7 +247,21 @@ un chat o en Momentos（朋友圈）y envíalo.</p>
 
 <div class="sticky"><a class="btn" href="#donar">💚 Donar ahora</a></div>
 
+<script src="data.js"></script>
 <script>
+(function(){
+  var c = window.CAMPAIGN; if (!c) return;
+  var pct = Math.round(c.raised / c.firstGoal * 1000) / 10;
+  var f = function(n){ return "$" + n.toLocaleString("es-CO"); };
+  document.getElementById("raised-num").textContent = f(c.raised);
+  document.getElementById("raised-pct").textContent = "· " + pct.toLocaleString("es-CO") + "% de la primera meta";
+  document.getElementById("bar-fill").style.width = Math.min(pct, 100) + "%";
+  document.getElementById("first-goal").textContent = f(c.firstGoal);
+  document.getElementById("final-goal").textContent = f(c.finalGoal);
+  var l = (navigator.language || "").toLowerCase(), s = document.getElementById("langsuggest");
+  if (l.indexOf("en") === 0) { s.innerHTML = 'This page is also available in <a href="en/">English →</a>'; s.style.display = "block"; }
+  else if (l.indexOf("de") === 0) { s.innerHTML = 'Diese Seite gibt es auch auf <a href="de/">Deutsch →</a>'; s.style.display = "block"; }
+})();
 function revealMail(el){
   var m = ["nataliavallejomoreno", "gmail.com"].join("@");
   el.textContent = m;
