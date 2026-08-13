@@ -38,7 +38,7 @@
   .lede strong{color:var(--ink)}
   .progress-card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;margin:18px 0}
   .bar{background:#e2ece2;border-radius:99px;height:14px;overflow:hidden;margin:10px 0 6px}
-  .fill{background:linear-gradient(90deg,var(--green-deep),#3f9668);height:100%;width:71%;border-radius:99px}
+  .fill{background:linear-gradient(90deg,var(--green-deep),#3f9668);height:100%;width:74%;border-radius:99px}
   .raised{font-size:22px;font-weight:700;color:var(--green-deep)}
   .goal-note{font-size:14px;color:var(--ink-soft)}
   .btn{display:block;text-align:center;background:var(--green);color:#fff;text-decoration:none;
@@ -103,9 +103,9 @@
 </header>
 
 <div class="progress-card">
-  <div class="raised"><span id="raised-num">10.658.000 COP</span> gesammelt <span id="raised-pct" style="font-size:16px;color:var(--ink-soft);font-weight:600">· 71 % des ersten Ziels</span></div>
+  <div class="raised"><span id="raised-num">22.161.000 COP</span> gesammelt <span id="raised-pct" style="font-size:16px;color:var(--ink-soft);font-weight:600">· 74 % des neuen Ziels</span></div>
   <div class="bar"><div class="fill" id="bar-fill"></div></div>
-  <div class="goal-note"><strong>Erstes Ziel: <span id="first-goal">15.000.000 COP</span></strong> — rund 8 Monatsraten (≈ 4.100 €)</div>
+  <div class="goal-note"><strong>Neues Ziel: <span id="first-goal">30.000.000 COP</span></strong> — das erste Ziel (15 Mio.) wurde in nur 2 Tagen erreicht! 🎉 (≈ 8.300 €)</div>
   <div class="goal-note" id="due-line" style="margin-top:6px;color:var(--green-dark);font-weight:700">Die nächste Rate über 1.824.000 COP (≈ 500 €) ist am 15. August fällig.</div>
 </div>
 
@@ -235,6 +235,15 @@ weiterleitet und die Belege veröffentlicht. Jeder Beitrag zählt — gemeinsam 
 
 <h2>Neuigkeiten</h2>
 <div class="update">
+  <div class="date">14. August 2026 — 🎉 ERSTES ZIEL ÜBERTROFFEN!</div>
+  <p style="margin:6px 0 0">In nur zwei Tagen haben wir das erste Ziel von 15 Millionen COP erreicht —
+  und übertroffen: Wir stehen bei <strong>22.161.000 COP (≈ 6.100 €)</strong>, dank Spenden aus Kolumbien
+  (Nequi: 11,5 Mio.), Europa und Australien (PayPal: 2.416 € + Überweisungen: 250 €) und China (WeChat
+  und Alipay: ¥2.100). Deshalb erhöhen wir das Ziel: <strong>30 Millionen COP — mehr als ein Jahr an
+  Kreditraten</strong>. Von Herzen danke an alle, die in fünf Ländern gespendet und geteilt haben.
+  Weiter geht's! 💚</p>
+</div>
+<div class="update">
   <div class="date">13. August 2026 — 34 %!</div>
   <p style="margin:6px 0 0">Was für ein Start! Wir stehen bei <strong>5.105.000 COP (≈ 1.400 €)</strong>
   — 34 % des ersten Ziels: 1.342 € über PayPal (inklusive der ersten Beiträge aus der Familie) und
@@ -267,7 +276,7 @@ einen Chat oder deine Moments（朋友圈）ein und sende sie.</p>
 
 <div class="sticky"><a class="btn" href="#spenden">💚 Jetzt spenden</a></div>
 
-<script src="../data.js?v=6"></script>
+<script src="../data.js?v=7"></script>
 <script>
 (function(){
   var c = window.CAMPAIGN; if (!c) return;
@@ -275,7 +284,7 @@ einen Chat oder deine Moments（朋友圈）ein und sende sie.</p>
   var f = function(n){ return n.toLocaleString("de-DE") + " COP"; };
   var eur = (c.copPerEur > 0) ? Math.round(c.raised / c.copPerEur / 10) * 10 : 0;
   document.getElementById("raised-num").textContent = f(c.raised) + (eur > 0 ? " (≈ " + eur.toLocaleString("de-DE") + " €)" : "");
-  document.getElementById("raised-pct").textContent = "· " + pct.toLocaleString("de-DE") + " % des ersten Ziels";
+  document.getElementById("raised-pct").textContent = "· " + pct.toLocaleString("de-DE") + " % des neuen Ziels";
   document.getElementById("bar-fill").style.width = Math.min(pct, 100) + "%";
   document.getElementById("first-goal").textContent = f(c.firstGoal);
   if (c.nextPaymentDue) {
