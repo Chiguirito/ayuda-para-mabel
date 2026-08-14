@@ -109,7 +109,8 @@
 <div class="progress-card">
   <div class="raised"><span id="raised-num">22,161,000 COP</span> raised <span id="raised-pct" style="font-size:16px;color:var(--ink-soft);font-weight:600">· 74% of the new goal</span></div>
   <div class="bar"><div class="fill" id="bar-fill"></div></div>
-  <div class="goal-note"><strong>New goal: <span id="first-goal">30,000,000 COP</span></strong> — the first goal ($15M) was reached in just 2 days! 🎉 (≈ €8,300 / £7,100 / A$13,400)</div>
+  <div class="goal-note"><strong>Goal 2: <span id="first-goal">30,000,000 COP</span></strong> = one year of payments (≈ €8,300) · the full debt is 89.4 million — every donation still counts</div>
+  <div class="goal-note" id="remaining-line" style="margin-top:6px;color:var(--green-dark);font-weight:700">7,839,000 COP still needed to complete the year of payments</div>
   <div class="goal-note" id="due-line" style="margin-top:6px;color:var(--green-dark);font-weight:700">The next loan payment of 1,824,000 COP (≈ €500) is due 15 August.</div>
 </div>
 
@@ -251,11 +252,13 @@ Mabel Xiomara and posts the receipts. Every contribution counts — together we 
 <h2>Updates</h2>
 <div class="update">
   <div class="date">August 14, 2026 — 🎉 FIRST GOAL SMASHED!</div>
-  <p style="margin:6px 0 0">In just two days we reached — and passed — the first goal of 15 million COP:
+  <p style="margin:6px 0 0">In under 24 hours we reached — and passed — the first goal of 15 million COP:
   we're now at <strong>22,161,000 COP (≈ €6,100)</strong>, thanks to donations from Colombia (Nequi:
   11.5M), Europe and Australia (PayPal: €2,416 + bank transfers: €250) and China (WeChat and Alipay:
-  ¥2,100). So we're raising the goal: <strong>30 million COP — more than a year of loan payments</strong>.
-  Heartfelt thanks to everyone who has donated and shared across five countries. Onward! 💚</p>
+  ¥2,100). So we're raising the goal: <strong>30 million COP — one year of loan payments</strong>.
+  Heartfelt thanks to everyone who has donated and shared across five countries. But the full debt is
+  <strong>89.4 million COP</strong> — what we've raised covers barely a quarter. Every donation and
+  every share still makes the difference. 💚</p>
 </div>
 <div class="update">
   <div class="date">August 13, 2026 — 34%!</div>
@@ -301,6 +304,9 @@ chat or your Moments（朋友圈）and send.</p>
   document.getElementById("raised-pct").textContent = "· " + pct.toLocaleString("en-GB") + "% of the new goal";
   document.getElementById("bar-fill").style.width = Math.min(pct, 100) + "%";
   document.getElementById("first-goal").textContent = f(c.firstGoal);
+  var rem = c.firstGoal - c.raised, rl = document.getElementById("remaining-line");
+  if (rem > 0) rl.textContent = f(rem) + " still needed to complete the year of payments";
+  else rl.style.display = "none";
   if (c.nextPaymentDue) {
     var due = new Date(c.nextPaymentDue + "T23:59:59-05:00");
     var days = Math.ceil((due - new Date()) / 86400000);

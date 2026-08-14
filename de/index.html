@@ -109,7 +109,8 @@
 <div class="progress-card">
   <div class="raised"><span id="raised-num">22.161.000 COP</span> gesammelt <span id="raised-pct" style="font-size:16px;color:var(--ink-soft);font-weight:600">· 74 % des neuen Ziels</span></div>
   <div class="bar"><div class="fill" id="bar-fill"></div></div>
-  <div class="goal-note"><strong>Neues Ziel: <span id="first-goal">30.000.000 COP</span></strong> — das erste Ziel (15 Mio.) wurde in nur 2 Tagen erreicht! 🎉 (≈ 8.300 €)</div>
+  <div class="goal-note"><strong>Ziel 2: <span id="first-goal">30.000.000 COP</span></strong> = ein Jahr an Raten (≈ 8.300 €) · die Gesamtschuld beträgt 89,4 Mio. — jeder Beitrag zählt weiter</div>
+  <div class="goal-note" id="remaining-line" style="margin-top:6px;color:var(--green-dark);font-weight:700">Noch 7.839.000 COP bis das Jahr an Raten gedeckt ist</div>
   <div class="goal-note" id="due-line" style="margin-top:6px;color:var(--green-dark);font-weight:700">Die nächste Rate über 1.824.000 COP (≈ 500 €) ist am 15. August fällig.</div>
 </div>
 
@@ -273,12 +274,13 @@ weiterleitet und die Belege veröffentlicht. Jeder Beitrag zählt — gemeinsam 
 <h2>Neuigkeiten</h2>
 <div class="update">
   <div class="date">14. August 2026 — 🎉 ERSTES ZIEL ÜBERTROFFEN!</div>
-  <p style="margin:6px 0 0">In nur zwei Tagen haben wir das erste Ziel von 15 Millionen COP erreicht —
-  und übertroffen: Wir stehen bei <strong>22.161.000 COP (≈ 6.100 €)</strong>, dank Spenden aus Kolumbien
-  (Nequi: 11,5 Mio.), Europa und Australien (PayPal: 2.416 € + Überweisungen: 250 €) und China (WeChat
-  und Alipay: ¥2.100). Deshalb erhöhen wir das Ziel: <strong>30 Millionen COP — mehr als ein Jahr an
-  Kreditraten</strong>. Von Herzen danke an alle, die in fünf Ländern gespendet und geteilt haben.
-  Weiter geht's! 💚</p>
+  <p style="margin:6px 0 0">In weniger als 24 Stunden haben wir das erste Ziel von 15 Millionen COP
+  erreicht — und übertroffen: Wir stehen bei <strong>22.161.000 COP (≈ 6.100 €)</strong>, dank Spenden
+  aus Kolumbien (Nequi: 11,5 Mio.), Europa und Australien (PayPal: 2.416 € + Überweisungen: 250 €) und
+  China (WeChat und Alipay: ¥2.100). Deshalb erhöhen wir das Ziel: <strong>30 Millionen COP — ein Jahr
+  an Kreditraten</strong>. Von Herzen danke an alle, die in fünf Ländern gespendet und geteilt haben.
+  Aber die Gesamtschuld beträgt <strong>89,4 Millionen COP</strong> — das Erreichte deckt erst gut ein
+  Viertel. Jede Spende und jedes Teilen macht weiter den Unterschied. 💚</p>
 </div>
 <div class="update">
   <div class="date">13. August 2026 — 34 %!</div>
@@ -324,6 +326,9 @@ einen Chat oder deine Moments（朋友圈）ein und sende sie.</p>
   document.getElementById("raised-pct").textContent = "· " + pct.toLocaleString("de-DE") + " % des neuen Ziels";
   document.getElementById("bar-fill").style.width = Math.min(pct, 100) + "%";
   document.getElementById("first-goal").textContent = f(c.firstGoal);
+  var rem = c.firstGoal - c.raised, rl = document.getElementById("remaining-line");
+  if (rem > 0) rl.textContent = "Noch " + f(rem) + " bis das Jahr an Raten gedeckt ist";
+  else rl.style.display = "none";
   if (c.nextPaymentDue) {
     var due = new Date(c.nextPaymentDue + "T23:59:59-05:00");
     var days = Math.ceil((due - new Date()) / 86400000);

@@ -124,7 +124,8 @@
 <div class="progress-card">
   <div class="raised"><span id="raised-num">$22.161.000</span> COP recaudados <span id="raised-pct" style="font-size:16px;color:var(--ink-soft);font-weight:600">· 74% de la nueva meta</span></div>
   <div class="bar"><div class="fill" id="bar-fill"></div></div>
-  <div class="goal-note"><strong>Nueva meta: <span id="first-goal">$30.000.000</span></strong> — ¡la primera meta ($15M) se superó en solo 2 días! 🎉</div>
+  <div class="goal-note"><strong>Meta 2: <span id="first-goal">$30.000.000</span></strong> = un año de cuotas · la deuda completa es de $89,4 millones — cada aporte sigue contando</div>
+  <div class="goal-note" id="remaining-line" style="margin-top:6px;color:var(--green-dark);font-weight:700">Faltan $7.839.000 para completar el año de cuotas</div>
   <div class="goal-note" id="due-line" style="margin-top:6px;color:var(--green-dark);font-weight:700">La próxima cuota de $1.824.000 vence el 15 de agosto.</div>
 </div>
 
@@ -268,11 +269,13 @@ Cualquier aporte suma; entre todos marcamos la diferencia.</p>
 <h2>Actualizaciones</h2>
 <div class="update">
   <div class="date">14 de agosto de 2026 — 🎉 ¡PRIMERA META SUPERADA!</div>
-  <p style="margin:6px 0 0">En solo dos días alcanzamos — y superamos — la primera meta de $15 millones:
-  ya vamos en <strong>$22.161.000</strong>, gracias a donaciones desde Colombia (Nequi: $11,5 millones),
-  Europa y Australia (PayPal: €2.416 + transferencias: €250) y China (WeChat y Alipay: ¥2.100). Por eso
-  ampliamos la meta: <strong>$30 millones — más de un año de cuotas del crédito</strong>. Gracias de
-  corazón a cada persona que ha donado y compartido en los cinco países. ¡Sigamos! 💚</p>
+  <p style="margin:6px 0 0">En menos de 24 horas alcanzamos — y superamos — la primera meta de $15
+  millones: ya vamos en <strong>$22.161.000</strong>, gracias a donaciones desde Colombia (Nequi: $11,5
+  millones), Europa y Australia (PayPal: €2.416 + transferencias: €250) y China (WeChat y Alipay:
+  ¥2.100). Por eso ampliamos la meta: <strong>$30 millones — un año de cuotas del crédito</strong>.
+  Gracias de corazón a cada persona que ha donado y compartido en los cinco países. Pero la deuda
+  completa es de <strong>$89,4 millones</strong> — lo logrado cubre apenas una cuarta parte. Cada
+  aporte y cada compartida siguen haciendo la diferencia. 💚</p>
 </div>
 <div class="update">
   <div class="date">13 de agosto de 2026 — ¡34%!</div>
@@ -317,6 +320,9 @@ un chat o en Momentos（朋友圈）y envíalo.</p>
   document.getElementById("raised-pct").textContent = "· " + pct.toLocaleString("es-CO") + "% de la nueva meta";
   document.getElementById("bar-fill").style.width = Math.min(pct, 100) + "%";
   document.getElementById("first-goal").textContent = f(c.firstGoal);
+  var rem = c.firstGoal - c.raised, rl = document.getElementById("remaining-line");
+  if (rem > 0) rl.textContent = "Faltan " + f(rem) + " para completar el año de cuotas";
+  else rl.style.display = "none";
   if (c.nextPaymentDue) {
     var due = new Date(c.nextPaymentDue + "T23:59:59-05:00");
     var days = Math.ceil((due - new Date()) / 86400000);
