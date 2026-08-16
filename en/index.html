@@ -107,10 +107,10 @@
 </header>
 
 <div class="progress-card">
-  <div class="raised"><span id="raised-num">36,035,000 COP</span> raised <span id="raised-pct" style="font-size:16px;color:var(--ink-soft);font-weight:600">· 40.3% of the total debt</span></div>
-  <div class="bar"><div class="fill" id="bar-fill"></div></div>
-  <div class="goal-note"><strong>Goal: <span id="first-goal">89,400,000 COP</span></strong> — the full loan debt (≈ €24,600)</div>
-  <div class="goal-note" id="remaining-line" style="margin-top:6px;color:var(--green-dark);font-weight:700">Monthly payments covered so far: 19 of 49 ✓</div>
+  <div class="raised"><span id="ms-remaining">€2,390</span> still needed for <span id="ms-label">half of the debt</span></div>
+  <div class="bar"><div class="fill" id="bar-fill" style="width:80.6%"></div></div>
+  <div class="goal-note" id="ms-line"><strong>80.6% of the way</strong> to the next goal: 44,700,000 COP</div>
+  <div class="goal-note" id="total-line" style="margin-top:6px">Together we have already raised <span id="raised-pct">40.3%</span> of the <span id="first-goal">89.4 million COP (≈ €24,600)</span> — <span id="total-remaining">53.4 million COP (≈ €14,700)</span> to go for Mabel Xiomara to get a fresh start, free of debt.</div>
   <div class="goal-note" id="due-line" style="margin-top:6px;color:var(--green-dark);font-weight:700">The next loan payment of 1,824,000 COP (≈ €500) is due 15 August.</div>
 </div>
 
@@ -375,23 +375,31 @@ chat or your Moments（朋友圈）and send.</p>
 
 <div class="sticky"><a class="btn" href="#donate">💚 Donate now</a></div>
 
-<script src="../data.js?v=11"></script>
+<script src="../data.js?v=12"></script>
 <script>
 (function(){
   var c = window.CAMPAIGN; if (!c) return;
   var pct = Math.round(c.raised / c.firstGoal * 1000) / 10;
   var f = function(n){ return n.toLocaleString("en-GB") + " COP"; };
-  var eur = (c.copPerEur > 0) ? Math.round(c.raised / c.copPerEur / 10) * 10 : 0;
-  document.getElementById("raised-num").textContent = f(c.raised) + (eur > 0 ? " (≈ €" + eur.toLocaleString("en-GB") + ")" : "");
-  document.getElementById("raised-pct").textContent = "· " + pct.toLocaleString("en-GB") + "% of the total debt";
-  document.getElementById("bar-fill").style.width = Math.min(pct, 100) + "%";
-  document.getElementById("first-goal").textContent = f(c.firstGoal);
-  var rl = document.getElementById("remaining-line");
-  if (c.monthly > 0) rl.textContent = "Monthly payments covered so far: " + Math.floor(c.raised / c.monthly) +
-    " of " + Math.round(c.firstGoal / c.monthly) + " ✓";
+  var eurOf = function(n){ return (c.copPerEur > 0) ? Math.round(n / c.copPerEur / 10) * 10 : 0; };
+  var eur = eurOf(c.raised);
+  var ms = (c.milestones || []).filter(function(m){ return m.amount > c.raised; })[0] || (c.milestones || []).slice(-1)[0];
+  if (ms) {
+    var rem = Math.max(ms.amount - c.raised, 0);
+    var mpct = Math.min(Math.round(c.raised / ms.amount * 1000) / 10, 100);
+    document.getElementById("ms-remaining").textContent = (eur > 0 ? "€" + eurOf(rem).toLocaleString("en-GB") + " (" + f(rem) + ")" : f(rem));
+    document.getElementById("ms-label").textContent = ms.label.en;
+    document.getElementById("bar-fill").style.width = mpct + "%";
+    document.getElementById("ms-line").innerHTML = "<strong>" + mpct.toLocaleString("en-GB") + "% of the way</strong> to the next goal: " + f(ms.amount);
+  } else {
+    document.getElementById("bar-fill").style.width = Math.min(pct, 100) + "%";
+  }
+    document.getElementById("raised-pct").textContent = pct.toLocaleString("en-GB") + "%";
+  document.getElementById("total-remaining").textContent = ((c.firstGoal - c.raised)/1e6).toLocaleString("en-GB", {maximumFractionDigits:1}) + " million COP" + (c.copPerEur > 0 ? " (≈ €" + eurOf(c.firstGoal - c.raised).toLocaleString("en-GB") + ")" : "");
+  document.getElementById("first-goal").textContent = (c.firstGoal/1e6).toLocaleString("en-GB", {maximumFractionDigits:1}) + " million COP" + (c.copPerEur > 0 ? " (≈ €" + eurOf(c.firstGoal).toLocaleString("en-GB") + ")" : "");
   if (c.nextPaymentDue) {
     var due = new Date(c.nextPaymentDue + "T23:59:59-05:00");
-    var days = Math.ceil((due - new Date()) / 86400000);
+    var diff = due - new Date(); var days = diff < 0 ? -1 : Math.ceil(diff / 86400000);
     var dstr = due.toLocaleDateString("en-GB", {day: "numeric", month: "long"});
     var dl = document.getElementById("due-line");
     if (!isFinite(days)) { }

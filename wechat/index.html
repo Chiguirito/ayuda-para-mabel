@@ -55,9 +55,10 @@
   every month, with an outstanding balance of 89.4 million COP.</p>
 
   <div class="progress-card">
-    <div class="raised"><span id="raised-num">36,035,000 COP</span> raised</div>
-    <div class="bar"><div class="fill" id="bar-fill"></div></div>
-    <div class="goal-note">Goal: <span id="first-goal">89,400,000 COP</span> — the full loan debt · every donation counts</div>
+    <div class="raised"><span id="ms-remaining">8,665,000 COP</span> still needed for <span id="ms-label">half of the debt</span></div>
+    <div class="bar"><div class="fill" id="bar-fill" style="width:80.6%"></div></div>
+    <div class="goal-note" id="ms-line"><strong>80.6% of the way</strong> to the next goal: 44,700,000 COP</div>
+    <div class="goal-note" style="margin-top:6px">Together we have already raised <span id="raised-pct">40.3%</span> of the <span id="first-goal">89.4 million COP</span> — <span id="total-remaining">53.4 million COP</span> to go for Mabel Xiomara to get a fresh start, free of debt.</div>
   </div>
 
   <p>Alipay donations are received by <strong>Natalia</strong>, Mabel Xiomara's cousin,
@@ -82,15 +83,25 @@
   <p class="note">Questions? Write to us: <a href="#" onclick="var m=['nataliavallejomoreno','gmail.com'].join('@');this.textContent=m;this.href='mailto:'+m;this.onclick=null;return false" style="color:var(--green-deep)">show contact email</a></p>
 </main>
 
-<script src="../data.js?v=11"></script>
+<script src="../data.js?v=12"></script>
 <script>
 (function(){
   var c = window.CAMPAIGN; if (!c) return;
   var pct = Math.round(c.raised / c.firstGoal * 1000) / 10;
   var f = function(n){ return n.toLocaleString("en-GB") + " COP"; };
-  document.getElementById("raised-num").textContent = f(c.raised);
-  document.getElementById("bar-fill").style.width = Math.min(pct, 100) + "%";
-  document.getElementById("first-goal").textContent = f(c.firstGoal);
+  var ms = (c.milestones || []).filter(function(m){ return m.amount > c.raised; })[0] || (c.milestones || []).slice(-1)[0];
+  if (ms) {
+    var mpct = Math.min(Math.round(c.raised / ms.amount * 1000) / 10, 100);
+    document.getElementById("ms-remaining").textContent = f(Math.max(ms.amount - c.raised, 0));
+    document.getElementById("ms-label").textContent = ms.label.en;
+    document.getElementById("bar-fill").style.width = mpct + "%";
+    document.getElementById("ms-line").innerHTML = "<strong>" + mpct.toLocaleString("en-GB") + "% of the way</strong> to the next goal: " + f(ms.amount);
+  } else {
+    document.getElementById("bar-fill").style.width = Math.min(pct, 100) + "%";
+  }
+  document.getElementById("raised-pct").textContent = pct.toLocaleString("en-GB") + "%";
+  document.getElementById("first-goal").textContent = (c.firstGoal/1e6).toLocaleString("en-GB", {maximumFractionDigits:1}) + " million COP";
+  document.getElementById("total-remaining").textContent = ((c.firstGoal - c.raised)/1e6).toLocaleString("en-GB", {maximumFractionDigits:1}) + " million COP";
 })();
 </script>
 </body>
