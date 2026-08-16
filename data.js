@@ -2,7 +2,7 @@
 // OJO: tras CUALQUIER cambio en este archivo, subir el número de versión (?v=N)
 // en las etiquetas <script src="data.js?v=N"> de las 4 páginas — mientras el
 // Browser Cache TTL de Cloudflare siga en 4h, es la única forma de que los
-// navegadores con caché vieja carguen el archivo nuevo. Versión actual: v=12.
+// navegadores con caché vieja carguen el archivo nuevo. Versión actual: v=13.
 window.CAMPAIGN = {
   raised: 36035000,             // COP recaudados (Colombia $20,2M + PayPal €3.409,39 + Wise A$700 + transf. €250 + China ¥2.100)
   firstGoal: 89400000,          // meta = la deuda completa (reencuadre 14-ago; hitos de 15M y 30M superados)
