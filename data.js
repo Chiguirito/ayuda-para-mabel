@@ -2,9 +2,9 @@
 // OJO: tras CUALQUIER cambio en este archivo, subir el número de versión (?v=N)
 // en las etiquetas <script src="data.js?v=N"> de las 4 páginas — mientras el
 // Browser Cache TTL de Cloudflare siga en 4h, es la única forma de que los
-// navegadores con caché vieja carguen el archivo nuevo. Versión actual: v=13.
+// navegadores con caché vieja carguen el archivo nuevo. Versión actual: v=14.
 window.CAMPAIGN = {
-  raised: 36035000,             // COP recaudados (Colombia $20,2M + PayPal €3.409,39 + Wise A$700 + transf. €250 + China ¥2.100)
+  raised: 47042000,             // COP recaudados (Colombia $30,86M + PayPal €3.504 + Wise A$700 + transf. €250 + China ¥2.100) — 17-ago
   firstGoal: 89400000,          // meta = la deuda completa (reencuadre 14-ago; hitos de 15M y 30M superados)
   monthly: 1824000,             // cuota mensual COP (para la línea "cuotas cubiertas")
   copPerEur: 3630,              // tasa COP por EUR (verificada 13 ago 2026; revisar mensualmente)
