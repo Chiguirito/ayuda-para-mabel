@@ -8,7 +8,7 @@ window.CAMPAIGN = {
   firstGoal: 89400000,          // meta = la deuda completa (reencuadre 14-ago; hitos de 15M y 30M superados)
   monthly: 1824000,             // cuota mensual COP (para la línea "cuotas cubiertas")
   copPerEur: 3630,              // tasa COP por EUR (verificada 13 ago 2026; revisar mensualmente)
-  nextPaymentDue: "2026-08-15", // fecha de la próxima cuota (YYYY-MM-DD)
+  nextPaymentDue: "2026-08-15", // (ya no se muestra en la tarjeta desde el 17-ago; se conserva por si vuelve)
   // Metas en orden; la página elige automáticamente la primera que aún no se ha alcanzado.
   // Son fracciones neutras de la deuda (no prometen a qué crédito se aplica el dinero).
   milestones: [

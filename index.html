@@ -126,7 +126,6 @@
   <div class="bar"><div class="fill" id="bar-fill" style="width:78.9%"></div></div>
   <div class="goal-note" id="ms-line"><strong>78,9 % del camino</strong> a la próxima meta: $59.600.000</div>
   <div class="goal-note" id="total-line" style="margin-top:6px">Entre todos ya reunimos el <span id="raised-pct">52,6 %</span> de los <span id="first-goal">$89,4 millones</span> — faltan <span id="total-remaining">$42,4 millones</span> para que Mabel Xiomara pueda empezar de nuevo, libre de deudas.</div>
-  <div class="goal-note" id="due-line" style="margin-top:6px;color:var(--green-dark);font-weight:700">La próxima cuota de $1.824.000 vence el 15 de agosto.</div>
 </div>
 
 <a class="btn" href="#donar">💚 Quiero donar</a>
@@ -341,15 +340,15 @@ Cualquier aporte suma; entre todos marcamos la diferencia.</p>
 <h2>Actualizaciones</h2>
 <div class="update">
   <div class="date">17 de agosto de 2026 — 💚 ¡Pasamos la mitad!</div>
-  <p style="margin:6px 0 0">Una semana después del terremoto, y en solo cinco días de campaña, ya
-  reunimos <strong>$47.042.000</strong> — el <strong>52,6 % de la deuda</strong> y 25 de las 49 cuotas.
+  <p style="margin:6px 0 0">Una semana después del terremoto, y en cinco días de campaña,
+  reunimos <strong>$47.042.000</strong> — el <strong>52,6 % de la deuda</strong>.
   Personas en Colombia, Alemania, Australia, China y varios países más han donado, compartido y
   escrito. Mabel Xiomara, Arlex y los niños no tienen palabras — nosotros tampoco. Gracias de corazón.</p>
   <p style="margin:6px 0 0">Y ahora lo difícil: <strong>faltan $42,4 millones</strong>. El banco no
   espera — cada mes que pasa, la familia paga $1.824.000 por una casa que ya no existe. Los primeros
   días trajeron a los más cercanos; para llegar a la meta necesitamos llegar a personas que todavía
-  no conocen la historia. <strong>Siguiente meta: los dos tercios de la deuda ($59,6 millones) — faltan
-  $12,6 millones (≈ €3.460).</strong></p>
+  no conocen la historia. <strong>Siguiente meta: los dos tercios de la deuda ($59,6 millones) — para esta
+  meta faltan $12,6 millones (≈ €3.460).</strong></p>
   <p style="margin:6px 0 0">Si ya donaste, hoy te pedimos otra cosa: reenvía esta página a una sola
   persona que aún no la haya visto. Un mensaje tuyo llega donde nosotros no llegamos. 💚</p>
 </div>
@@ -427,17 +426,6 @@ un chat o en Momentos（朋友圈）y envíalo.</p>
     document.getElementById("raised-pct").textContent = pct.toLocaleString("es-CO") + " %";
   document.getElementById("first-goal").textContent = "$" + (c.firstGoal/1e6).toLocaleString("es-CO", {maximumFractionDigits:1}) + " millones";
   document.getElementById("total-remaining").textContent = "$" + ((c.firstGoal - c.raised)/1e6).toLocaleString("es-CO", {maximumFractionDigits:1}) + " millones";
-  if (c.nextPaymentDue) {
-    var due = new Date(c.nextPaymentDue + "T23:59:59-05:00");
-    var diff = due - new Date(); var days = diff < 0 ? -1 : Math.ceil(diff / 86400000);
-    var dstr = due.toLocaleDateString("es-CO", {day: "numeric", month: "long"});
-    var dl = document.getElementById("due-line");
-    if (!isFinite(days)) { }
-    else if (days > 1) dl.textContent = "La próxima cuota de $1.824.000 vence el " + dstr + " — faltan " + days + " días.";
-    else if (days === 1) dl.textContent = "La próxima cuota de $1.824.000 vence mañana, " + dstr + ".";
-    else if (days === 0) dl.textContent = "La próxima cuota de $1.824.000 vence hoy.";
-    else dl.style.display = "none";
-  }
   var l = (navigator.language || "").toLowerCase(), s = document.getElementById("langsuggest");
   if (l.indexOf("en") === 0) { s.innerHTML = 'This page is also available in <a href="en/">English →</a>'; s.style.display = "block"; }
   else if (l.indexOf("de") === 0) { s.innerHTML = 'Diese Seite gibt es auch auf <a href="de/">Deutsch →</a>'; s.style.display = "block"; }

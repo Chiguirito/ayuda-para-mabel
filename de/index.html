@@ -111,7 +111,6 @@
   <div class="bar"><div class="fill" id="bar-fill" style="width:78.9%"></div></div>
   <div class="goal-note" id="ms-line"><strong>78,9 % des Weges</strong> zum nächsten Ziel: 59.600.000 COP</div>
   <div class="goal-note" id="total-line" style="margin-top:6px">Gemeinsam haben wir schon <span id="raised-pct">52,6 %</span> der <span id="first-goal">89,4 Millionen COP (≈ 24.600 €)</span> zusammen — es fehlen noch <span id="total-remaining">42,4 Millionen COP (≈ 11.670 €)</span>, damit Mabel Xiomara ohne Schulden neu anfangen kann.</div>
-  <div class="goal-note" id="due-line" style="margin-top:6px;color:var(--green-dark);font-weight:700">Die nächste Rate über 1.824.000 COP (≈ 500 €) ist am 15. August fällig.</div>
 </div>
 
 <a class="btn" href="#spenden">💚 Ich möchte spenden</a>
@@ -330,16 +329,15 @@ weiterleitet und die Belege veröffentlicht. Jeder Beitrag zählt — gemeinsam 
 <h2>Neuigkeiten</h2>
 <div class="update">
   <div class="date">17. August 2026 — 💚 Über die Hälfte!</div>
-  <p style="margin:6px 0 0">Eine Woche nach dem Erdbeben und nur fünf Tage nach dem Start haben wir
-  <strong>47.042.000 COP (≈ 12.960 €)</strong> gesammelt — <strong>52,6 % der Schuld</strong> und 25 der 49
-  Kreditraten. Menschen in Kolumbien, Deutschland, Australien, China und darüber hinaus haben gespendet,
+  <p style="margin:6px 0 0">Eine Woche nach dem Erdbeben und fünf Tage nach dem Start haben wir
+  <strong>47.042.000 COP (≈ 12.960 €)</strong> gesammelt — <strong>52,6 % der Schuld</strong>. Menschen in Kolumbien, Deutschland, Australien, China und darüber hinaus haben gespendet,
   geteilt und geschrieben. Mabel Xiomara, Arlex und die Jungs fehlen die Worte — uns auch. Danke von Herzen.</p>
   <p style="margin:6px 0 0">Und jetzt der schwere Teil: <strong>es fehlen noch 42,4 Millionen COP
   (≈ 11.670 €)</strong>. Die Bank wartet nicht — jeden Monat zahlt die Familie 1.824.000 COP für ein Haus,
   das es nicht mehr gibt. Die ersten Tage haben die Menschen erreicht, die Mabel am nächsten stehen; um
   das Ziel zu schaffen, müssen wir jetzt Menschen erreichen, die die Geschichte noch nicht kennen.
-  <strong>Nächstes Ziel: zwei Drittel der Schuld (59,6 Millionen COP) — noch 12,6 Millionen COP
-  (≈ 3.460 €).</strong></p>
+  <strong>Nächstes Ziel: zwei Drittel der Schuld (59,6 Millionen COP) — für dieses Ziel fehlen noch
+  12,6 Millionen COP (≈ 3.460 €).</strong></p>
   <p style="margin:6px 0 0">Wenn du schon gespendet hast, bitten wir dich heute um etwas anderes: Leite
   diese Seite an eine einzige Person weiter, die sie noch nicht gesehen hat. Deine Nachricht kommt an,
   wo wir nicht hinkommen. 💚</p>
@@ -419,17 +417,6 @@ einen Chat oder deine Moments（朋友圈）ein und sende sie.</p>
     document.getElementById("raised-pct").textContent = pct.toLocaleString("de-DE") + " %";
   document.getElementById("total-remaining").textContent = ((c.firstGoal - c.raised)/1e6).toLocaleString("de-DE", {maximumFractionDigits:1}) + " Millionen COP" + (c.copPerEur > 0 ? " (≈ " + eurOf(c.firstGoal - c.raised).toLocaleString("de-DE") + " €)" : "");
   document.getElementById("first-goal").textContent = (c.firstGoal/1e6).toLocaleString("de-DE", {maximumFractionDigits:1}) + " Millionen COP" + (c.copPerEur > 0 ? " (≈ " + eurOf(c.firstGoal).toLocaleString("de-DE") + " €)" : "");
-  if (c.nextPaymentDue) {
-    var due = new Date(c.nextPaymentDue + "T23:59:59-05:00");
-    var diff = due - new Date(); var days = diff < 0 ? -1 : Math.ceil(diff / 86400000);
-    var dstr = due.toLocaleDateString("de-DE", {day: "numeric", month: "long"});
-    var dl = document.getElementById("due-line");
-    if (!isFinite(days)) { }
-    else if (days > 1) dl.textContent = "Die nächste Rate über 1.824.000 COP (≈ 500 €) ist am " + dstr + " fällig — in " + days + " Tagen.";
-    else if (days === 1) dl.textContent = "Die nächste Rate über 1.824.000 COP (≈ 500 €) ist morgen fällig, am " + dstr + ".";
-    else if (days === 0) dl.textContent = "Die nächste Rate über 1.824.000 COP (≈ 500 €) ist heute fällig.";
-    else dl.style.display = "none";
-  }
 })();
 function shareStory(el){
   var orig = el.textContent;

@@ -111,7 +111,6 @@
   <div class="bar"><div class="fill" id="bar-fill" style="width:78.9%"></div></div>
   <div class="goal-note" id="ms-line"><strong>78.9% of the way</strong> to the next goal: 59,600,000 COP</div>
   <div class="goal-note" id="total-line" style="margin-top:6px">Together we have already raised <span id="raised-pct">52.6%</span> of the <span id="first-goal">89.4 million COP (≈ €24,600)</span> — <span id="total-remaining">42.4 million COP (≈ €11,670)</span> to go for Mabel Xiomara to get a fresh start, free of debt.</div>
-  <div class="goal-note" id="due-line" style="margin-top:6px;color:var(--green-dark);font-weight:700">The next loan payment of 1,824,000 COP (≈ €500) is due 15 August.</div>
 </div>
 
 <a class="btn" href="#donate">💚 I want to donate</a>
@@ -324,15 +323,14 @@ Mabel Xiomara and posts the receipts. Every contribution counts — together we 
 <h2>Updates</h2>
 <div class="update">
   <div class="date">August 17, 2026 — 💚 Past the halfway mark!</div>
-  <p style="margin:6px 0 0">One week after the earthquake, and only five days into the campaign, we have
-  raised <strong>47,042,000 COP (≈ €12,960)</strong> — <strong>52.6% of the debt</strong> and 25 of the 49
-  loan payments. People in Colombia, Germany, Australia, China and beyond have donated, shared and
+  <p style="margin:6px 0 0">One week after the earthquake, and five days into the campaign, we have
+  raised <strong>47,042,000 COP (≈ €12,960)</strong> — <strong>52.6% of the debt</strong>. People in Colombia, Germany, Australia, China and beyond have donated, shared and
   written. Mabel Xiomara, Arlex and the boys are lost for words — so are we. Thank you from the heart.</p>
   <p style="margin:6px 0 0">Now the hard part: <strong>42.4 million COP (≈ €11,670) is still missing</strong>.
   The bank doesn't wait — every month that passes, the family pays 1,824,000 COP for a house that no
   longer exists. The first days brought the people closest to Mabel; to reach the goal we now need to
   reach people who haven't heard the story yet. <strong>Next goal: two thirds of the debt (59.6 million
-  COP) — 12.6 million COP (≈ €3,460) to go.</strong></p>
+  COP) — for this goal, 12.6 million COP (≈ €3,460) is still missing.</strong></p>
   <p style="margin:6px 0 0">If you have already donated, today we ask you for something else: forward
   this page to one person who hasn't seen it yet. A message from you reaches where we can't. 💚</p>
 </div>
@@ -411,17 +409,6 @@ chat or your Moments（朋友圈）and send.</p>
     document.getElementById("raised-pct").textContent = pct.toLocaleString("en-GB") + "%";
   document.getElementById("total-remaining").textContent = ((c.firstGoal - c.raised)/1e6).toLocaleString("en-GB", {maximumFractionDigits:1}) + " million COP" + (c.copPerEur > 0 ? " (≈ €" + eurOf(c.firstGoal - c.raised).toLocaleString("en-GB") + ")" : "");
   document.getElementById("first-goal").textContent = (c.firstGoal/1e6).toLocaleString("en-GB", {maximumFractionDigits:1}) + " million COP" + (c.copPerEur > 0 ? " (≈ €" + eurOf(c.firstGoal).toLocaleString("en-GB") + ")" : "");
-  if (c.nextPaymentDue) {
-    var due = new Date(c.nextPaymentDue + "T23:59:59-05:00");
-    var diff = due - new Date(); var days = diff < 0 ? -1 : Math.ceil(diff / 86400000);
-    var dstr = due.toLocaleDateString("en-GB", {day: "numeric", month: "long"});
-    var dl = document.getElementById("due-line");
-    if (!isFinite(days)) { }
-    else if (days > 1) dl.textContent = "The next loan payment of 1,824,000 COP (≈ €500) is due " + dstr + " — " + days + " days away.";
-    else if (days === 1) dl.textContent = "The next loan payment of 1,824,000 COP (≈ €500) is due tomorrow, " + dstr + ".";
-    else if (days === 0) dl.textContent = "The next loan payment of 1,824,000 COP (≈ €500) is due today.";
-    else dl.style.display = "none";
-  }
 })();
 function shareStory(el){
   var orig = el.textContent;
