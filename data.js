@@ -4,7 +4,7 @@
 // Browser Cache TTL de Cloudflare siga en 4h, es la única forma de que los
 // navegadores con caché vieja carguen el archivo nuevo. Versión actual: v=20 (v=16 y v=17 quedaron cacheados con contenido viejo en Cloudflare el 17-ago: alguien pidió las URLs versionadas antes del push).
 window.CAMPAIGN = {
-  raised: 51732000,             // COP recaudados (Colombia $32,15M + PayPal €3.564 + Wise A$1.544 + Wise £180 + transf. €370 + China ¥2.300) — 18-ago tarde
+  raised: 49840000,             // COP recaudados (Colombia $32,15M + PayPal €3.564 + Wise A$700 + Wise £180 + transf. €370 + China ¥2.300) — 18-ago tarde
   firstGoal: 89400000,          // meta = la deuda completa (reencuadre 14-ago; hitos de 15M y 30M superados)
   monthly: 1824000,             // cuota mensual COP (para la línea "cuotas cubiertas")
   copPerEur: 3630,              // tasa COP por EUR (verificada 13 ago 2026; revisar mensualmente)
