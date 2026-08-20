@@ -449,7 +449,7 @@ un chat o en Momentos（朋友圈）y envíalo.</p>
 function shareStory(el){
   var orig = el.textContent;
   el.textContent = "Preparando imagen…";
-  fetch("img/story-es.jpg?v=2").then(function(r){ return r.blob(); }).then(function(b){
+  fetch("img/story-es.jpg?v=3").then(function(r){ return r.blob(); }).then(function(b){
     var f = new File([b], "ayuda-mabel.jpg", {type: "image/jpeg"});
     if (navigator.canShare && navigator.canShare({files: [f]})) {
       navigator.share({files: [f], text: "La casa de Mabel Xiomara en Circasia se perdió en el terremoto, pero la deuda con el banco sigue. Cómo ayudar: https://help-mabel.co"})
@@ -457,9 +457,9 @@ function shareStory(el){
         .catch(function(){ el.textContent = orig; });
     } else {
       el.textContent = "Guarda la imagen y súbela a tu estado 📲";
-      window.open("img/story-es.jpg?v=2", "_blank");
+      window.open("img/story-es.jpg?v=3", "_blank");
     }
-  }).catch(function(){ el.textContent = orig; window.open("img/story-es.jpg?v=2", "_blank"); });
+  }).catch(function(){ el.textContent = orig; window.open("img/story-es.jpg?v=3", "_blank"); });
   return false;
 }
 function copyText(t, el, ok){
