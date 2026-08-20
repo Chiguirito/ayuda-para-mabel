@@ -437,7 +437,7 @@ einen Chat oder deine Moments（朋友圈）ein und sende sie.</p>
 function shareStory(el){
   var orig = el.textContent;
   el.textContent = "Bild wird vorbereitet…";
-  fetch("../img/story-de.jpg?v=3").then(function(r){ return r.blob(); }).then(function(b){
+  fetch("../img/story-de.jpg?v=4").then(function(r){ return r.blob(); }).then(function(b){
     var f = new File([b], "hilfe-mabel.jpg", {type: "image/jpeg"});
     if (navigator.canShare && navigator.canShare({files: [f]})) {
       navigator.share({files: [f], text: "Das Haus von Mabel Xiomara in Kolumbien ist durch das Erdbeben verloren, aber die Bankschulden bleiben. So kannst du helfen: https://help-mabel.co/de/"})
@@ -445,9 +445,9 @@ function shareStory(el){
         .catch(function(){ el.textContent = orig; });
     } else {
       el.textContent = "Speichere das Bild und poste es in deiner Story 📲";
-      window.open("../img/story-de.jpg?v=3", "_blank");
+      window.open("../img/story-de.jpg?v=4", "_blank");
     }
-  }).catch(function(){ el.textContent = orig; window.open("../img/story-de.jpg?v=3", "_blank"); });
+  }).catch(function(){ el.textContent = orig; window.open("../img/story-de.jpg?v=4", "_blank"); });
   return false;
 }
 function copyText(t, el, ok){
