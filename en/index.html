@@ -428,7 +428,7 @@ chat or your Moments（朋友圈）and send.</p>
 function shareStory(el){
   var orig = el.textContent;
   el.textContent = "Preparing image…";
-  fetch("../img/story-en.jpg").then(function(r){ return r.blob(); }).then(function(b){
+  fetch("../img/story-en.jpg?v=2").then(function(r){ return r.blob(); }).then(function(b){
     var f = new File([b], "help-mabel.jpg", {type: "image/jpeg"});
     if (navigator.canShare && navigator.canShare({files: [f]})) {
       navigator.share({files: [f], text: "Mabel Xiomara's home in Colombia was lost in the earthquake, but the bank debt remains. How to help: https://help-mabel.co/en/"})
@@ -436,9 +436,9 @@ function shareStory(el){
         .catch(function(){ el.textContent = orig; });
     } else {
       el.textContent = "Save the image and post it to your story 📲";
-      window.open("../img/story-en.jpg", "_blank");
+      window.open("../img/story-en.jpg?v=2", "_blank");
     }
-  }).catch(function(){ el.textContent = orig; window.open("../img/story-en.jpg", "_blank"); });
+  }).catch(function(){ el.textContent = orig; window.open("../img/story-en.jpg?v=2", "_blank"); });
   return false;
 }
 function copyText(t, el, ok){
