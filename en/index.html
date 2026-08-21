@@ -327,6 +327,23 @@ counts — together we can make a difference.</p>
 
 <h2>Updates</h2>
 <div class="update">
+  <div class="date">August 21, 2026 — 💚 Two thirds! Now for the final stretch</div>
+  <p style="margin:6px 0 0">Today we crossed a goal that seemed impossible eleven days ago:
+  <strong>67% of the debt is covered</strong>. People in Colombia, Germany, Australia, China, the UK
+  and beyond have donated, shared and written messages the family reads again and again. Honestly:
+  we don't know how to thank you. Neither do Mabel Xiomara, Arlex, Matías, Gabriel and Joel — this
+  is simply unbelievable.</p>
+  <p style="margin:6px 0 0">And that is exactly why we also have to be honest today: <strong>we can't
+  stop here.</strong> There are no more intermediate goals — all that's left is the whole debt.
+  <strong>29.3 million COP (≈ €8,160) is still missing</strong> for the family to be free of the
+  bank, and the bank doesn't wait: every month that passes costs 1,824,000 COP for a house that no
+  longer exists. Two thirds of the way is done; the last third only happens if we all push once
+  more.</p>
+  <p style="margin:6px 0 0">If you can donate, every contribution brings the finish line closer. And
+  if you already have, we ask for the most valuable thing you own: <strong>forward this page to one
+  person who hasn't heard the story yet.</strong> The final stretch is run as a team. 💚</p>
+</div>
+<div class="update">
   <div class="date">August 19, 2026 — Change to the Nequi number (important if you donate from Colombia)</div>
   <p style="margin:6px 0 0">Nequi has temporarily blocked Mabel Xiomara's account — they tell us until
   <strong>September 1</strong>. What already arrived there is still in the account and is counted in the total,
@@ -428,7 +445,7 @@ chat or your Moments（朋友圈）and send.</p>
 function shareStory(el){
   var orig = el.textContent;
   el.textContent = "Preparing image…";
-  fetch("../img/story-en.jpg?v=4").then(function(r){ return r.blob(); }).then(function(b){
+  fetch("../img/story-en.jpg?v=5").then(function(r){ return r.blob(); }).then(function(b){
     var f = new File([b], "help-mabel.jpg", {type: "image/jpeg"});
     if (navigator.canShare && navigator.canShare({files: [f]})) {
       navigator.share({files: [f], text: "Mabel Xiomara's home in Colombia was lost in the earthquake, but the bank debt remains. How to help: https://help-mabel.co/en/"})
@@ -436,9 +453,9 @@ function shareStory(el){
         .catch(function(){ el.textContent = orig; });
     } else {
       el.textContent = "Save the image and post it to your story 📲";
-      window.open("../img/story-en.jpg?v=4", "_blank");
+      window.open("../img/story-en.jpg?v=5", "_blank");
     }
-  }).catch(function(){ el.textContent = orig; window.open("../img/story-en.jpg?v=4", "_blank"); });
+  }).catch(function(){ el.textContent = orig; window.open("../img/story-en.jpg?v=5", "_blank"); });
   return false;
 }
 function copyText(t, el, ok){

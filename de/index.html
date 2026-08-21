@@ -333,6 +333,24 @@ Beitrag zählt — gemeinsam schaffen wir das.</p>
 
 <h2>Neuigkeiten</h2>
 <div class="update">
+  <div class="date">21. August 2026 — 💚 Zwei Drittel! Jetzt kommt die Zielgerade</div>
+  <p style="margin:6px 0 0">Heute haben wir ein Ziel erreicht, das vor elf Tagen unmöglich schien:
+  <strong>67 % der Schuld sind gedeckt</strong>. Menschen in Kolumbien, Deutschland, Australien,
+  China, Großbritannien und darüber hinaus haben gespendet, geteilt und Nachrichten geschrieben, die
+  die Familie immer wieder liest. Ganz ehrlich: Wir wissen nicht, wie wir danken sollen. Mabel
+  Xiomara, Arlex, Matías, Gabriel und Joel auch nicht — das ist einfach unglaublich.</p>
+  <p style="margin:6px 0 0">Und genau deshalb müssen wir heute auch ehrlich sagen: <strong>Wir können
+  hier nicht stehen bleiben.</strong> Es gibt keine Zwischenziele mehr — was bleibt, ist die ganze
+  Schuld. <strong>Es fehlen noch 29,3 Millionen COP (≈ 8.160 €)</strong>, damit die Familie frei von
+  der Bank ist — und die Bank wartet nicht: Jeder Monat kostet 1.824.000 COP für ein Haus, das es
+  nicht mehr gibt. Zwei Drittel des Weges sind geschafft; das letzte Drittel schaffen wir nur, wenn
+  alle noch einmal mit anschieben.</p>
+  <p style="margin:6px 0 0">Wenn du spenden kannst, bringt jeder Beitrag das Ziel näher. Und wenn du
+  schon gespendet hast, bitten wir dich um das Wertvollste, das du hast: <strong>Leite diese Seite an
+  eine Person weiter, die die Geschichte noch nicht kennt.</strong> Die Zielgerade läuft man im
+  Team. 💚</p>
+</div>
+<div class="update">
   <div class="date">19. August 2026 — Änderung beim Nequi-Konto (wichtig, wenn du aus Kolumbien spendest)</div>
   <p style="margin:6px 0 0">Nequi hat das Konto von Mabel Xiomara vorübergehend gesperrt — laut Nequi bis zum
   <strong>1. September</strong>. Was dort schon eingegangen ist, liegt weiter auf dem Konto und ist im Gesamtstand
@@ -437,7 +455,7 @@ einen Chat oder deine Moments（朋友圈）ein und sende sie.</p>
 function shareStory(el){
   var orig = el.textContent;
   el.textContent = "Bild wird vorbereitet…";
-  fetch("../img/story-de.jpg?v=4").then(function(r){ return r.blob(); }).then(function(b){
+  fetch("../img/story-de.jpg?v=5").then(function(r){ return r.blob(); }).then(function(b){
     var f = new File([b], "hilfe-mabel.jpg", {type: "image/jpeg"});
     if (navigator.canShare && navigator.canShare({files: [f]})) {
       navigator.share({files: [f], text: "Das Haus von Mabel Xiomara in Kolumbien ist durch das Erdbeben verloren, aber die Bankschulden bleiben. So kannst du helfen: https://help-mabel.co/de/"})
@@ -445,9 +463,9 @@ function shareStory(el){
         .catch(function(){ el.textContent = orig; });
     } else {
       el.textContent = "Speichere das Bild und poste es in deiner Story 📲";
-      window.open("../img/story-de.jpg?v=4", "_blank");
+      window.open("../img/story-de.jpg?v=5", "_blank");
     }
-  }).catch(function(){ el.textContent = orig; window.open("../img/story-de.jpg?v=4", "_blank"); });
+  }).catch(function(){ el.textContent = orig; window.open("../img/story-de.jpg?v=5", "_blank"); });
   return false;
 }
 function copyText(t, el, ok){

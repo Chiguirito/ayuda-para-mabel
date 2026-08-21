@@ -344,6 +344,22 @@ comprobantes. Cualquier aporte suma; entre todos marcamos la diferencia.</p>
 
 <h2>Actualizaciones</h2>
 <div class="update">
+  <div class="date">21 de agosto de 2026 — 💚 ¡Dos tercios! Y ahora, la recta final</div>
+  <p style="margin:6px 0 0">Hoy cruzamos una meta que hace once días parecía imposible: <strong>ya está
+  reunido el 67 % de la deuda</strong>. Personas en Colombia, Alemania, Australia, China, el Reino Unido
+  y varios países más han donado, compartido y escrito mensajes que la familia lee una y otra vez.
+  De verdad: no sabemos cómo agradecerlo. Mabel Xiomara, Arlex, Matías, Gabriel y Joel tampoco —
+  esto es, sencillamente, increíble.</p>
+  <p style="margin:6px 0 0">Y justamente por eso hoy también decimos, con toda honestidad: <strong>no
+  podemos parar aquí.</strong> Ya no habrá más metas intermedias — lo único que queda es la deuda
+  completa. <strong>Faltan $29,3 millones</strong> para que la familia quede libre del banco, y el
+  banco no espera: cada mes que pasa son $1.824.000 por una casa que ya no existe. Dos tercios del
+  camino están hechos; el último tercio solo sale si entre todos empujamos una vez más.</p>
+  <p style="margin:6px 0 0">Si puedes donar, cada aporte acerca el final. Y si ya donaste, te pedimos
+  lo más valioso que tienes: <strong>reenvía esta página a una persona que aún no conozca la
+  historia.</strong> La recta final se corre en equipo. 💚</p>
+</div>
+<div class="update">
   <div class="date">19 de agosto de 2026 — Cambio en el Nequi (importante si donas desde Colombia)</div>
   <p style="margin:6px 0 0">Nequi bloqueó temporalmente la cuenta de Mabel Xiomara — nos indican que hasta el
   <strong>1 de septiembre</strong>. Lo que ya llegó a esa cuenta sigue ahí y está contado en el total, pero
@@ -449,7 +465,7 @@ un chat o en Momentos（朋友圈）y envíalo.</p>
 function shareStory(el){
   var orig = el.textContent;
   el.textContent = "Preparando imagen…";
-  fetch("img/story-es.jpg?v=4").then(function(r){ return r.blob(); }).then(function(b){
+  fetch("img/story-es.jpg?v=5").then(function(r){ return r.blob(); }).then(function(b){
     var f = new File([b], "ayuda-mabel.jpg", {type: "image/jpeg"});
     if (navigator.canShare && navigator.canShare({files: [f]})) {
       navigator.share({files: [f], text: "La casa de Mabel Xiomara en Circasia se perdió en el terremoto, pero la deuda con el banco sigue. Cómo ayudar: https://help-mabel.co"})
@@ -457,9 +473,9 @@ function shareStory(el){
         .catch(function(){ el.textContent = orig; });
     } else {
       el.textContent = "Guarda la imagen y súbela a tu estado 📲";
-      window.open("img/story-es.jpg?v=4", "_blank");
+      window.open("img/story-es.jpg?v=5", "_blank");
     }
-  }).catch(function(){ el.textContent = orig; window.open("img/story-es.jpg?v=4", "_blank"); });
+  }).catch(function(){ el.textContent = orig; window.open("img/story-es.jpg?v=5", "_blank"); });
   return false;
 }
 function copyText(t, el, ok){
