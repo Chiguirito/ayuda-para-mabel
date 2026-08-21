@@ -16,8 +16,7 @@ window.CAMPAIGN = {
                        note:  {es: "1/2", en: "1/2", de: "1/2"}},
     {amount: 59600000, label: {es: "los dos tercios de la deuda", en: "two thirds of the debt", de: "zu zwei Dritteln der Schuld"},
                        note:  {es: "2/3", en: "2/3", de: "2/3"}},
-    {amount: 74500000, label: {es: "los cinco sextos de la deuda", en: "five sixths of the debt", de: "zu fünf Sechsteln der Schuld"},
-                       note:  {es: "5/6", en: "5/6", de: "5/6"}},
+    // 21-ago (Paul): sin más metas intermedias — tras 2/3 se apunta directo a la deuda completa (se quitó la de 5/6 = $74,5M).
     {amount: 89400000, label: {es: "quedar libre de deuda", en: "clearing the whole debt", de: "Mabel schuldenfrei ist"},
                        note:  {es: "49 de 49 cuotas", en: "49 of 49 payments", de: "49 von 49 Raten"}}
   ]
