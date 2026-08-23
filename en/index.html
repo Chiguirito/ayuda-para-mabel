@@ -107,10 +107,10 @@
 </header>
 
 <div class="progress-card">
-  <div class="raised"><span id="ms-remaining">€7,820 (28,145,000 COP)</span> still needed for <span id="ms-label">clearing the whole debt</span></div>
-  <div class="bar"><div class="fill" id="bar-fill" style="width:68.5%"></div></div>
-  <div class="goal-note" id="ms-line"><strong>68.5% of the way</strong> to the next goal: 89,400,000 COP</div>
-  <div class="goal-note" id="total-line" style="margin-top:6px">Together we have already raised <span id="raised-pct">68.5%</span> of the <span id="first-goal">89.4 million COP (≈ €24,850)</span> — <span id="total-remaining">28.1 million COP (≈ €7,820)</span> to go for Mabel Xiomara to get a fresh start, free of debt.</div>
+  <div class="raised"><span id="ms-remaining">€7,530 (27,082,000 COP)</span> still needed for <span id="ms-label">clearing the whole debt</span></div>
+  <div class="bar"><div class="fill" id="bar-fill" style="width:69.7%"></div></div>
+  <div class="goal-note" id="ms-line"><strong>69.7% of the way</strong> to the next goal: 89,400,000 COP</div>
+  <div class="goal-note" id="total-line" style="margin-top:6px">Together we have already raised <span id="raised-pct">69.7%</span> of the <span id="first-goal">89.4 million COP (≈ €24,850)</span> — <span id="total-remaining">27.1 million COP (≈ €7,530)</span> to go for Mabel Xiomara to get a fresh start, free of debt.</div>
 </div>
 
 <a class="btn" href="#donate">💚 I want to donate</a>
@@ -325,6 +325,34 @@ counts — together we can make a difference.</p>
 
 <h2>Updates</h2>
 <div class="update">
+  <div class="date">August 24, 2026 — ✅ The small loan is PAID OFF! (and the big one just lost 30 million)</div>
+  <p style="margin:6px 0 0">The news we've been dreaming of sharing: <strong>on Friday, August 21, Mabel
+  Xiomara went to the banks in the city of Armenia — and paid.</strong> With what you have donated:</p>
+  <ul style="margin:6px 0 0;padding-left:22px">
+    <li>The <strong>small loan (AV Villas)</strong> — the one with the highest interest rate — was
+    <strong>PAID OFF in full</strong> with a payment of <strong>28,857,000 COP (≈ €8,000)</strong>. That
+    debt no longer exists: never again its 608,000 COP monthly installment.</li>
+    <li>The <strong>big loan (Banco Popular)</strong> received an <strong>extraordinary payment of
+    30,000,000 COP (≈ €8,300)</strong>.</li>
+  </ul>
+  <p style="margin:6px 0 0">In total, <strong>58,857,000 COP (≈ €16,400) of your donations are now at the
+  banks</strong> — almost everything raised so far. Of the two debts, only one is left, and it just lost
+  30 million. As always, here are the receipts for both payments (tap to enlarge; only personal data is
+  covered):</p>
+  <div style="display:flex;flex-wrap:wrap;gap:10px;margin:10px 0">
+    <a href="../img/comprobante-pago-avvillas.jpg" target="_blank" rel="noopener" style="flex:1 1 200px;max-width:280px"><img src="../img/comprobante-pago-avvillas.jpg" width="1200" height="675" alt="AV Villas receipt: payment of 28,857,000 COP on August 21 — the small loan is settled (personal data covered)" loading="lazy" style="width:100%;height:auto;border:1px solid var(--line)"></a>
+    <a href="../img/comprobante-pago-popular.jpg" target="_blank" rel="noopener" style="flex:1 1 160px;max-width:200px"><img src="../img/comprobante-pago-popular.jpg" width="900" height="1154" alt="Banco Popular receipt: extraordinary payment of 30,000,000 COP on the big loan, August 21 (personal data covered)" loading="lazy" style="width:100%;height:auto;border:1px solid var(--line)"></a>
+  </div>
+  <p style="margin:6px 0 0">What's next? Only the balance of the big loan remains. Next week the bank will
+  confirm exactly how much is left after this payment, and we'll publish it here — clear numbers, as
+  always. In the meantime, the family's monthly payment drops from 1,824,000 to 1,216,000 COP.</p>
+  <p style="margin:6px 0 0">On August 10, the earthquake took this family's home and left them two debts.
+  Fourteen days later, one of those debts is gone and the other one is wounded. You did that — every
+  donation, every forwarded message. And you haven't stopped: this weekend alone, more than a million
+  pesos in new donations came in. <strong>Thank you from the heart.</strong> The final stretch
+  continues: every contribution brings closer the day Mabel Xiomara is free of the bank. 💚</p>
+</div>
+<div class="update">
   <div class="date">August 22, 2026 — 🙌 The money is in Colombia (and a huge thank-you to Wise)</div>
   <p style="margin:6px 0 0">Today is a big day! 🎉 For the first time since this campaign began, almost
   everything donated is where it belongs: <strong>in Colombia, in Mabel Xiomara's hands</strong>. This
@@ -453,7 +481,7 @@ chat or your Moments（朋友圈）and send.</p>
 
 <div class="sticky"><a class="btn" href="#donate">💚 Donate now</a></div>
 
-<script src="../data.js?v=26"></script>
+<script src="../data.js?v=27"></script>
 <script>
 (function(){
   var c = window.CAMPAIGN; if (!c) return;
@@ -479,7 +507,7 @@ chat or your Moments（朋友圈）and send.</p>
 function shareStory(el){
   var orig = el.textContent;
   el.textContent = "Preparing image…";
-  fetch("../img/story-en.jpg?v=5").then(function(r){ return r.blob(); }).then(function(b){
+  fetch("../img/story-en.jpg?v=6").then(function(r){ return r.blob(); }).then(function(b){
     var f = new File([b], "help-mabel.jpg", {type: "image/jpeg"});
     if (navigator.canShare && navigator.canShare({files: [f]})) {
       navigator.share({files: [f], text: "Mabel Xiomara's home in Colombia was lost in the earthquake, but the bank debt remains. How to help: https://help-mabel.co/en/"})
@@ -487,9 +515,9 @@ function shareStory(el){
         .catch(function(){ el.textContent = orig; });
     } else {
       el.textContent = "Save the image and post it to your story 📲";
-      window.open("../img/story-en.jpg?v=5", "_blank");
+      window.open("../img/story-en.jpg?v=6", "_blank");
     }
-  }).catch(function(){ el.textContent = orig; window.open("../img/story-en.jpg?v=5", "_blank"); });
+  }).catch(function(){ el.textContent = orig; window.open("../img/story-en.jpg?v=6", "_blank"); });
   return false;
 }
 function copyText(t, el, ok){
