@@ -107,10 +107,10 @@
 </header>
 
 <div class="progress-card">
-  <div class="raised">Noch <span id="ms-remaining">7.320 € (26.314.000 COP)</span> bis <span id="ms-label">Mabel schuldenfrei ist</span></div>
-  <div class="bar"><div class="fill" id="bar-fill" style="width:70.6%"></div></div>
-  <div class="goal-note" id="ms-line"><strong>70,6 % des Weges</strong> zum nächsten Ziel: 89.400.000 COP</div>
-  <div class="goal-note" id="total-line" style="margin-top:6px">Gemeinsam haben wir schon <span id="raised-pct">70,6 %</span> der <span id="first-goal">89,4 Millionen COP (≈ 24.850 €)</span> zusammen — es fehlen noch <span id="total-remaining">26,3 Millionen COP (≈ 7.320 €)</span>, damit Mabel Xiomara ohne Schulden neu anfangen kann.</div>
+  <div class="raised">Noch <span id="ms-remaining">6.970 € (25.067.000 COP)</span> bis <span id="ms-label">Mabel schuldenfrei ist</span></div>
+  <div class="bar"><div class="fill" id="bar-fill" style="width:72%"></div></div>
+  <div class="goal-note" id="ms-line"><strong>72 % des Weges</strong> zum nächsten Ziel: 89.400.000 COP</div>
+  <div class="goal-note" id="total-line" style="margin-top:6px">Gemeinsam haben wir schon <span id="raised-pct">72 %</span> der <span id="first-goal">89,4 Millionen COP (≈ 24.850 €)</span> zusammen — es fehlen noch <span id="total-remaining">25,1 Millionen COP (≈ 6.970 €)</span>, damit Mabel Xiomara ohne Schulden neu anfangen kann.</div>
 </div>
 
 <a class="btn" href="#spenden">💚 Ich möchte spenden</a>
@@ -493,7 +493,7 @@ einen Chat oder deine Moments（朋友圈）ein und sende sie.</p>
 
 <div class="sticky"><a class="btn" href="#spenden">💚 Jetzt spenden</a></div>
 
-<script src="../data.js?v=28"></script>
+<script src="../data.js?v=29"></script>
 <script>
 (function(){
   var c = window.CAMPAIGN; if (!c) return;
@@ -519,7 +519,7 @@ einen Chat oder deine Moments（朋友圈）ein und sende sie.</p>
 function shareStory(el){
   var orig = el.textContent;
   el.textContent = "Bild wird vorbereitet…";
-  fetch("../img/story-de.jpg?v=7").then(function(r){ return r.blob(); }).then(function(b){
+  fetch("../img/story-de.jpg?v=8").then(function(r){ return r.blob(); }).then(function(b){
     var f = new File([b], "hilfe-mabel.jpg", {type: "image/jpeg"});
     if (navigator.canShare && navigator.canShare({files: [f]})) {
       navigator.share({files: [f], text: "Das Haus von Mabel Xiomara in Kolumbien ist durch das Erdbeben verloren, aber die Bankschulden bleiben. So kannst du helfen: https://help-mabel.co/de/"})
@@ -527,9 +527,9 @@ function shareStory(el){
         .catch(function(){ el.textContent = orig; });
     } else {
       el.textContent = "Speichere das Bild und poste es in deiner Story 📲";
-      window.open("../img/story-de.jpg?v=7", "_blank");
+      window.open("../img/story-de.jpg?v=8", "_blank");
     }
-  }).catch(function(){ el.textContent = orig; window.open("../img/story-de.jpg?v=7", "_blank"); });
+  }).catch(function(){ el.textContent = orig; window.open("../img/story-de.jpg?v=8", "_blank"); });
   return false;
 }
 function copyText(t, el, ok){
