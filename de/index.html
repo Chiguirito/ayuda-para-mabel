@@ -83,6 +83,18 @@
   .trust{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;margin:16px 0}
   .trust ul{padding-left:20px}
   .trust li{margin-bottom:8px}
+  .reg-title{margin:18px 0 4px;font-size:17px;color:var(--green-deep)}
+  .reg-note{margin:0 0 6px;font-size:14px;color:var(--ink-soft)}
+  .reg-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+  table.reg{width:100%;border-collapse:collapse;font-size:14px;margin:4px 0 8px}
+  table.reg th,table.reg td{padding:6px 5px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+  table.reg th{font-size:12px;text-transform:uppercase;letter-spacing:.3px;color:var(--ink-soft)}
+  table.reg td.reg-date,table.reg td.reg-link{white-space:nowrap}
+  table.reg td.reg-what{width:100%}
+  .reg-org{color:var(--ink-soft);font-size:13px}
+  .reg-amt{white-space:nowrap}
+  table.reg tr.reg-total td{font-weight:700;border-bottom:0}
+  table.reg a{font-weight:700;white-space:nowrap}
   .doc-thumb{display:flex;gap:14px;align-items:center;margin-top:12px;text-decoration:none;color:inherit}
   .doc-thumb img{width:92px;border:1px solid var(--line);border-radius:8px;flex-shrink:0}
   .doc-thumb span{font-size:14px;color:var(--ink-soft)}
@@ -107,10 +119,10 @@
 </header>
 
 <div class="progress-card">
-  <div class="raised">Noch <span id="ms-remaining">6.510 € (23.400.000 COP)</span> bis <span id="ms-label">Mabel schuldenfrei ist</span></div>
-  <div class="bar"><div class="fill" id="bar-fill" style="width:73.8%"></div></div>
-  <div class="goal-note" id="ms-line"><strong>73,8 % des Weges</strong> zum nächsten Ziel: 89.400.000 COP</div>
-  <div class="goal-note" id="total-line" style="margin-top:6px">Gemeinsam haben wir schon <span id="raised-pct">73,8 %</span> der <span id="first-goal">89,4 Millionen COP (≈ 24.850 €)</span> zusammen — es fehlen noch <span id="total-remaining">23,4 Millionen COP (≈ 6.510 €)</span>, damit Mabel Xiomara ohne Schulden neu anfangen kann.</div>
+  <div class="raised">Noch <span id="ms-remaining">6.610 € (23.790.000 COP)</span> bis <span id="ms-label">Mabel schuldenfrei ist</span></div>
+  <div class="bar"><div class="fill" id="bar-fill" style="width:73.4%"></div></div>
+  <div class="goal-note" id="ms-line"><strong>73,4 % des Weges</strong> zum nächsten Ziel: 89.400.000 COP</div>
+  <div class="goal-note" id="total-line" style="margin-top:6px">Gemeinsam haben wir schon <span id="raised-pct">73,4 %</span> der <span id="first-goal">89,4 Millionen COP (≈ 24.850 €)</span> zusammen — es fehlen noch <span id="total-remaining">23,8 Millionen COP (≈ 6.610 €)</span>, damit Mabel Xiomara ohne Schulden neu anfangen kann.</div>
 </div>
 
 <a class="btn" href="#spenden">💚 Ich möchte spenden</a>
@@ -308,7 +320,7 @@ Beitrag zählt — gemeinsam schaffen wir das.</p>
     ihr Nequi — ohne Umwege.</li>
     <li>Spenden über PayPal, Banküberweisung und Alipay empfängt <strong>Natalia (ihre Cousine, die in
     China lebt)</strong>, die alles an Mabel Xiomara weiterleitet und die Belege auf dieser Seite
-    veröffentlicht.</li>
+    veröffentlicht (Verzeichnis weiter unten).</li>
     <li>Die Schuld bestand aus zwei Krediten mit Raten von 608.000 und 1.216.000 COP im Monat
     (zusammen 1.824.000 COP); das Ziel von <strong>89,4 Mio. COP</strong> entspricht dieser ganzen Schuld.
     <strong>Am 21. August wurde mit euren Spenden der kleine Kredit getilgt</strong> und auf den großen
@@ -325,6 +337,21 @@ Beitrag zählt — gemeinsam schaffen wir das.</p>
     <li>Wir veröffentlichen <strong>Neuigkeiten mit Belegen</strong> für jede Zahlung an die Bank.</li>
     <li>Fragen? <a href="#" onclick="return revealMail(this)">Kontakt-E-Mail anzeigen</a></li>
   </ul>
+  <h3 class="reg-title">Überweisungsverzeichnis — Geld nach Kolumbien</h3>
+  <p class="reg-note">Alles, was außerhalb Kolumbiens gespendet wird, geht auf Mabel Xiomaras Bancolombia-Konto. Jede Zeile hat ihren Beleg (auf „Beleg“ tippen; wir decken nur persönliche Daten Dritter ab). Keine Überweisung hat etwas gekostet.</p>
+  <div class="reg-wrap"><table class="reg">
+    <thead><tr><th>Datum</th><th>Von · gesendet → erhalten (COP)</th><th></th></tr></thead>
+    <tbody>
+      <tr><td class="reg-date">20. Aug</td><td class="reg-what"><span class="reg-org">Australien · Wise</span><br><strong class="reg-amt">A$780 → 1.703.000</strong></td><td class="reg-link"><a href="../img/comprobante-aud-bancolombia-v2.jpg" target="_blank" rel="noopener" aria-label="Beleg: A$780 → 1.703.000 COP">Beleg</a></td></tr>
+      <tr><td class="reg-date">21. Aug</td><td class="reg-what"><span class="reg-org">Großbritannien · Wise</span><br><strong class="reg-amt">£300 → 1.255.242</strong></td><td class="reg-link"><a href="../img/comprobante-wise-gbp.jpg" target="_blank" rel="noopener" aria-label="Beleg: £300 → 1.255.242 COP">Beleg</a></td></tr>
+      <tr><td class="reg-date">21. Aug</td><td class="reg-what"><span class="reg-org">Europa · Wise</span><br><strong class="reg-amt">2.135,40 € → 7.654.961</strong></td><td class="reg-link"><a href="../img/comprobante-wise-eur-1.jpg" target="_blank" rel="noopener" aria-label="Beleg: 2.135,40 € → 7.654.961 COP">Beleg</a></td></tr>
+      <tr><td class="reg-date">21. Aug</td><td class="reg-what"><span class="reg-org">Europa · Wise</span><br><strong class="reg-amt">2.000 € → 7.180.360</strong></td><td class="reg-link"><a href="../img/comprobante-wise-eur-2.jpg" target="_blank" rel="noopener" aria-label="Beleg: 2.000 € → 7.180.360 COP">Beleg</a></td></tr>
+      <tr><td class="reg-date">22. Aug</td><td class="reg-what"><span class="reg-org">China · Alipay/WeChat</span><br><strong class="reg-amt">1.750 ¥ → 800.000</strong></td><td class="reg-link"><a href="../img/comprobante-china-1.jpg" target="_blank" rel="noopener" aria-label="Beleg: 1.750 ¥ → 800.000 COP">Beleg</a></td></tr>
+      <tr><td class="reg-date">26. Aug</td><td class="reg-what"><span class="reg-org">China · Alipay/WeChat</span><br><strong class="reg-amt">850 ¥ → 404.000</strong></td><td class="reg-link"><a href="../img/comprobante-china-2.jpg" target="_blank" rel="noopener" aria-label="Beleg: 850 ¥ → 404.000 COP">Beleg</a></td></tr>
+      <tr class="reg-total"><td colspan="3">In Kolumbien erhalten: <span class="reg-amt">18.997.563 COP</span></td></tr>
+    </tbody>
+  </table></div>
+  <p class="reg-note">Die Zahlungen an die Banken vom 21. August sind mit Belegen in den Neuigkeiten vom 24. August dokumentiert.</p>
   <a class="doc-thumb" href="../img/notificacion-alcaldia.jpg" target="_blank" rel="noopener">
     <img src="../img/notificacion-alcaldia.jpg" width="1240" height="1755" alt="Offizielle Mitteilung: Haus unbewohnbar, Räumung (persönliche Daten geschwärzt)" loading="lazy">
     <span><strong>Offizielle Mitteilung des Rats für Katastrophenrisikomanagement</strong><br>
@@ -493,7 +520,7 @@ einen Chat oder deine Moments（朋友圈）ein und sende sie.</p>
 
 <div class="sticky"><a class="btn" href="#spenden">💚 Jetzt spenden</a></div>
 
-<script src="../data.js?v=32"></script>
+<script src="../data.js?v=33"></script>
 <script>
 (function(){
   var c = window.CAMPAIGN; if (!c) return;
@@ -519,7 +546,7 @@ einen Chat oder deine Moments（朋友圈）ein und sende sie.</p>
 function shareStory(el){
   var orig = el.textContent;
   el.textContent = "Bild wird vorbereitet…";
-  fetch("../img/story-de.jpg?v=11").then(function(r){ return r.blob(); }).then(function(b){
+  fetch("../img/story-de.jpg?v=12").then(function(r){ return r.blob(); }).then(function(b){
     var f = new File([b], "hilfe-mabel.jpg", {type: "image/jpeg"});
     if (navigator.canShare && navigator.canShare({files: [f]})) {
       navigator.share({files: [f], text: "Das Haus von Mabel Xiomara in Kolumbien ist durch das Erdbeben verloren, aber die Bankschulden bleiben. So kannst du helfen: https://help-mabel.co/de/"})
@@ -527,9 +554,9 @@ function shareStory(el){
         .catch(function(){ el.textContent = orig; });
     } else {
       el.textContent = "Speichere das Bild und poste es in deiner Story 📲";
-      window.open("../img/story-de.jpg?v=11", "_blank");
+      window.open("../img/story-de.jpg?v=12", "_blank");
     }
-  }).catch(function(){ el.textContent = orig; window.open("../img/story-de.jpg?v=11", "_blank"); });
+  }).catch(function(){ el.textContent = orig; window.open("../img/story-de.jpg?v=12", "_blank"); });
   return false;
 }
 function copyText(t, el, ok){

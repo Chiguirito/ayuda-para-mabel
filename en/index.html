@@ -83,6 +83,18 @@
   .trust{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;margin:16px 0}
   .trust ul{padding-left:20px}
   .trust li{margin-bottom:8px}
+  .reg-title{margin:18px 0 4px;font-size:17px;color:var(--green-deep)}
+  .reg-note{margin:0 0 6px;font-size:14px;color:var(--ink-soft)}
+  .reg-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+  table.reg{width:100%;border-collapse:collapse;font-size:14px;margin:4px 0 8px}
+  table.reg th,table.reg td{padding:6px 5px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+  table.reg th{font-size:12px;text-transform:uppercase;letter-spacing:.3px;color:var(--ink-soft)}
+  table.reg td.reg-date,table.reg td.reg-link{white-space:nowrap}
+  table.reg td.reg-what{width:100%}
+  .reg-org{color:var(--ink-soft);font-size:13px}
+  .reg-amt{white-space:nowrap}
+  table.reg tr.reg-total td{font-weight:700;border-bottom:0}
+  table.reg a{font-weight:700;white-space:nowrap}
   .doc-thumb{display:flex;gap:14px;align-items:center;margin-top:12px;text-decoration:none;color:inherit}
   .doc-thumb img{width:92px;border:1px solid var(--line);border-radius:8px;flex-shrink:0}
   .doc-thumb span{font-size:14px;color:var(--ink-soft)}
@@ -107,10 +119,10 @@
 </header>
 
 <div class="progress-card">
-  <div class="raised"><span id="ms-remaining">€6,510 (23,400,000 COP)</span> still needed for <span id="ms-label">clearing the whole debt</span></div>
-  <div class="bar"><div class="fill" id="bar-fill" style="width:73.8%"></div></div>
-  <div class="goal-note" id="ms-line"><strong>73.8% of the way</strong> to the next goal: 89,400,000 COP</div>
-  <div class="goal-note" id="total-line" style="margin-top:6px">Together we have already raised <span id="raised-pct">73.8%</span> of the <span id="first-goal">89.4 million COP (≈ €24,850)</span> — <span id="total-remaining">23.4 million COP (≈ €6,510)</span> to go for Mabel Xiomara to get a fresh start, free of debt.</div>
+  <div class="raised"><span id="ms-remaining">€6,610 (23,790,000 COP)</span> still needed for <span id="ms-label">clearing the whole debt</span></div>
+  <div class="bar"><div class="fill" id="bar-fill" style="width:73.4%"></div></div>
+  <div class="goal-note" id="ms-line"><strong>73.4% of the way</strong> to the next goal: 89,400,000 COP</div>
+  <div class="goal-note" id="total-line" style="margin-top:6px">Together we have already raised <span id="raised-pct">73.4%</span> of the <span id="first-goal">89.4 million COP (≈ €24,850)</span> — <span id="total-remaining">23.8 million COP (≈ €6,610)</span> to go for Mabel Xiomara to get a fresh start, free of debt.</div>
 </div>
 
 <a class="btn" href="#donate">💚 I want to donate</a>
@@ -303,7 +315,7 @@ counts — together we can make a difference.</p>
     her Nequi — no intermediaries.</li>
     <li>PayPal, Alipay and bank-transfer donations are received by <strong>Natalia (her cousin, who
     lives in China)</strong>, who forwards everything to Mabel Xiomara and posts the receipts on this
-    page.</li>
+    page (see the register below).</li>
     <li>The debt was two personal loans with payments of 608,000 and 1,216,000 COP per month
     (1,824,000 COP in total); the <strong>89.4-million-COP</strong> goal covers that whole debt.
     <strong>On August 21, with your donations, the small loan was settled</strong> and 30 million COP was
@@ -319,6 +331,21 @@ counts — together we can make a difference.</p>
     <li>We will post <strong>updates with receipts</strong> for every payment to the bank.</li>
     <li>Questions? <a href="#" onclick="return revealMail(this)">Show contact email</a></li>
   </ul>
+  <h3 class="reg-title">Transfer register — money sent to Colombia</h3>
+  <p class="reg-note">Everything donated outside Colombia is forwarded to Mabel Xiomara's Bancolombia account. Every line has its receipt (tap “view”; we only cover third parties' personal data). No transfer cost anything.</p>
+  <div class="reg-wrap"><table class="reg">
+    <thead><tr><th>Date</th><th>From · sent → received (COP)</th><th></th></tr></thead>
+    <tbody>
+      <tr><td class="reg-date">Aug 20</td><td class="reg-what"><span class="reg-org">Australia · Wise</span><br><strong class="reg-amt">A$780 → 1,703,000</strong></td><td class="reg-link"><a href="../img/comprobante-aud-bancolombia-v2.jpg" target="_blank" rel="noopener" aria-label="Receipt: A$780 → 1,703,000 COP">view</a></td></tr>
+      <tr><td class="reg-date">Aug 21</td><td class="reg-what"><span class="reg-org">United Kingdom · Wise</span><br><strong class="reg-amt">£300 → 1,255,242</strong></td><td class="reg-link"><a href="../img/comprobante-wise-gbp.jpg" target="_blank" rel="noopener" aria-label="Receipt: £300 → 1,255,242 COP">view</a></td></tr>
+      <tr><td class="reg-date">Aug 21</td><td class="reg-what"><span class="reg-org">Europe · Wise</span><br><strong class="reg-amt">€2,135.40 → 7,654,961</strong></td><td class="reg-link"><a href="../img/comprobante-wise-eur-1.jpg" target="_blank" rel="noopener" aria-label="Receipt: €2,135.40 → 7,654,961 COP">view</a></td></tr>
+      <tr><td class="reg-date">Aug 21</td><td class="reg-what"><span class="reg-org">Europe · Wise</span><br><strong class="reg-amt">€2,000 → 7,180,360</strong></td><td class="reg-link"><a href="../img/comprobante-wise-eur-2.jpg" target="_blank" rel="noopener" aria-label="Receipt: €2,000 → 7,180,360 COP">view</a></td></tr>
+      <tr><td class="reg-date">Aug 22</td><td class="reg-what"><span class="reg-org">China · Alipay/WeChat</span><br><strong class="reg-amt">¥1,750 → 800,000</strong></td><td class="reg-link"><a href="../img/comprobante-china-1.jpg" target="_blank" rel="noopener" aria-label="Receipt: ¥1,750 → 800,000 COP">view</a></td></tr>
+      <tr><td class="reg-date">Aug 26</td><td class="reg-what"><span class="reg-org">China · Alipay/WeChat</span><br><strong class="reg-amt">¥850 → 404,000</strong></td><td class="reg-link"><a href="../img/comprobante-china-2.jpg" target="_blank" rel="noopener" aria-label="Receipt: ¥850 → 404,000 COP">view</a></td></tr>
+      <tr class="reg-total"><td colspan="3">Total received in Colombia: <span class="reg-amt">18,997,563 COP</span></td></tr>
+    </tbody>
+  </table></div>
+  <p class="reg-note">The bank payments of August 21 are documented, with receipts, in the update of August 24.</p>
   <a class="doc-thumb" href="../img/notificacion-alcaldia.jpg" target="_blank" rel="noopener">
     <img src="../img/notificacion-alcaldia.jpg" width="1240" height="1755" alt="Official notification: house uninhabitable, evacuation (personal data redacted)" loading="lazy">
     <span><strong>Official notification from the Disaster Risk Management Council</strong><br>
@@ -482,7 +509,7 @@ chat or your Moments（朋友圈）and send.</p>
 
 <div class="sticky"><a class="btn" href="#donate">💚 Donate now</a></div>
 
-<script src="../data.js?v=32"></script>
+<script src="../data.js?v=33"></script>
 <script>
 (function(){
   var c = window.CAMPAIGN; if (!c) return;
@@ -508,7 +535,7 @@ chat or your Moments（朋友圈）and send.</p>
 function shareStory(el){
   var orig = el.textContent;
   el.textContent = "Preparing image…";
-  fetch("../img/story-en.jpg?v=11").then(function(r){ return r.blob(); }).then(function(b){
+  fetch("../img/story-en.jpg?v=12").then(function(r){ return r.blob(); }).then(function(b){
     var f = new File([b], "help-mabel.jpg", {type: "image/jpeg"});
     if (navigator.canShare && navigator.canShare({files: [f]})) {
       navigator.share({files: [f], text: "Mabel Xiomara's home in Colombia was lost in the earthquake, but the bank debt remains. How to help: https://help-mabel.co/en/"})
@@ -516,9 +543,9 @@ function shareStory(el){
         .catch(function(){ el.textContent = orig; });
     } else {
       el.textContent = "Save the image and post it to your story 📲";
-      window.open("../img/story-en.jpg?v=11", "_blank");
+      window.open("../img/story-en.jpg?v=12", "_blank");
     }
-  }).catch(function(){ el.textContent = orig; window.open("../img/story-en.jpg?v=11", "_blank"); });
+  }).catch(function(){ el.textContent = orig; window.open("../img/story-en.jpg?v=12", "_blank"); });
   return false;
 }
 function copyText(t, el, ok){

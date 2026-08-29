@@ -94,6 +94,18 @@
   .trust{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;margin:16px 0}
   .trust ul{padding-left:20px}
   .trust li{margin-bottom:8px}
+  .reg-title{margin:18px 0 4px;font-size:17px;color:var(--green-deep)}
+  .reg-note{margin:0 0 6px;font-size:14px;color:var(--ink-soft)}
+  .reg-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+  table.reg{width:100%;border-collapse:collapse;font-size:14px;margin:4px 0 8px}
+  table.reg th,table.reg td{padding:6px 5px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+  table.reg th{font-size:12px;text-transform:uppercase;letter-spacing:.3px;color:var(--ink-soft)}
+  table.reg td.reg-date,table.reg td.reg-link{white-space:nowrap}
+  table.reg td.reg-what{width:100%}
+  .reg-org{color:var(--ink-soft);font-size:13px}
+  .reg-amt{white-space:nowrap}
+  table.reg tr.reg-total td{font-weight:700;border-bottom:0}
+  table.reg a{font-weight:700;white-space:nowrap}
   .doc-thumb{display:flex;gap:14px;align-items:center;margin-top:12px;text-decoration:none;color:inherit}
   .doc-thumb img{width:92px;border:1px solid var(--line);border-radius:8px;flex-shrink:0}
   .doc-thumb span{font-size:14px;color:var(--ink-soft)}
@@ -123,10 +135,10 @@
 </header>
 
 <div class="progress-card">
-  <div class="raised">Faltan <span id="ms-remaining">$23.400.000</span> para <span id="ms-label">quedar libre de deuda</span></div>
-  <div class="bar"><div class="fill" id="bar-fill" style="width:73.8%"></div></div>
-  <div class="goal-note" id="ms-line"><strong>73,8 % del camino</strong> a la próxima meta: $89.400.000</div>
-  <div class="goal-note" id="total-line" style="margin-top:6px">Entre todos ya reunimos el <span id="raised-pct">73,8 %</span> de los <span id="first-goal">$89,4 millones</span> — faltan <span id="total-remaining">$23,4 millones</span> para que Mabel Xiomara pueda empezar de nuevo, libre de deudas.</div>
+  <div class="raised">Faltan <span id="ms-remaining">$23.790.000</span> para <span id="ms-label">quedar libre de deuda</span></div>
+  <div class="bar"><div class="fill" id="bar-fill" style="width:73.4%"></div></div>
+  <div class="goal-note" id="ms-line"><strong>73,4 % del camino</strong> a la próxima meta: $89.400.000</div>
+  <div class="goal-note" id="total-line" style="margin-top:6px">Entre todos ya reunimos el <span id="raised-pct">73,4 %</span> de los <span id="first-goal">$89,4 millones</span> — faltan <span id="total-remaining">$23,8 millones</span> para que Mabel Xiomara pueda empezar de nuevo, libre de deudas.</div>
 </div>
 
 <a class="btn" href="#donar">💚 Quiero donar</a>
@@ -320,7 +332,7 @@ comprobantes. Cualquier aporte suma; entre todos marcamos la diferencia.</p>
     o al Nequi de Mabel Xiomara —, sin intermediarios.</li>
     <li>Las donaciones por PayPal, Alipay y transferencia bancaria las recibe <strong>Natalia (su
     prima, que vive en China)</strong>, quien transfiere todo lo recaudado a Mabel Xiomara y publica
-    los comprobantes en esta página.</li>
+    los comprobantes en esta página (registro más abajo).</li>
     <li>La deuda eran dos créditos de libre inversión con cuotas de $608.000 y $1.216.000 al mes
     ($1.824.000 en total); la meta de <strong>$89,4 millones</strong> corresponde a esa deuda completa.
     <strong>El 21 de agosto, con lo donado, el crédito pequeño quedó saldado</strong> y al grande se le
@@ -336,6 +348,21 @@ comprobantes. Cualquier aporte suma; entre todos marcamos la diferencia.</p>
     <li>Publicaremos <strong>actualizaciones con comprobantes</strong> de cada pago al banco.</li>
     <li>¿Preguntas? <a href="#" onclick="return revealMail(this)">Mostrar correo de contacto</a></li>
   </ul>
+  <h3 class="reg-title">Registro de transferencias a Colombia</h3>
+  <p class="reg-note">Todo lo donado fuera de Colombia se gira a la cuenta Bancolombia de Mabel Xiomara. Cada línea tiene su comprobante (toca «ver»; solo cubrimos datos personales de terceros). Ninguna transferencia tuvo costo.</p>
+  <div class="reg-wrap"><table class="reg">
+    <thead><tr><th>Fecha</th><th>Origen · enviado → recibido</th><th></th></tr></thead>
+    <tbody>
+      <tr><td class="reg-date">20 ago</td><td class="reg-what"><span class="reg-org">Australia · Wise</span><br><strong class="reg-amt">A$780 → $1.703.000</strong></td><td class="reg-link"><a href="img/comprobante-aud-bancolombia-v2.jpg" target="_blank" rel="noopener" aria-label="Comprobante: A$780 → $1.703.000">ver</a></td></tr>
+      <tr><td class="reg-date">21 ago</td><td class="reg-what"><span class="reg-org">Reino Unido · Wise</span><br><strong class="reg-amt">£300 → $1.255.242</strong></td><td class="reg-link"><a href="img/comprobante-wise-gbp.jpg" target="_blank" rel="noopener" aria-label="Comprobante: £300 → $1.255.242">ver</a></td></tr>
+      <tr><td class="reg-date">21 ago</td><td class="reg-what"><span class="reg-org">Europa · Wise</span><br><strong class="reg-amt">€2.135,40 → $7.654.961</strong></td><td class="reg-link"><a href="img/comprobante-wise-eur-1.jpg" target="_blank" rel="noopener" aria-label="Comprobante: €2.135,40 → $7.654.961">ver</a></td></tr>
+      <tr><td class="reg-date">21 ago</td><td class="reg-what"><span class="reg-org">Europa · Wise</span><br><strong class="reg-amt">€2.000 → $7.180.360</strong></td><td class="reg-link"><a href="img/comprobante-wise-eur-2.jpg" target="_blank" rel="noopener" aria-label="Comprobante: €2.000 → $7.180.360">ver</a></td></tr>
+      <tr><td class="reg-date">22 ago</td><td class="reg-what"><span class="reg-org">China · Alipay/WeChat</span><br><strong class="reg-amt">¥1.750 → $800.000</strong></td><td class="reg-link"><a href="img/comprobante-china-1.jpg" target="_blank" rel="noopener" aria-label="Comprobante: ¥1.750 → $800.000">ver</a></td></tr>
+      <tr><td class="reg-date">26 ago</td><td class="reg-what"><span class="reg-org">China · Alipay/WeChat</span><br><strong class="reg-amt">¥850 → $404.000</strong></td><td class="reg-link"><a href="img/comprobante-china-2.jpg" target="_blank" rel="noopener" aria-label="Comprobante: ¥850 → $404.000">ver</a></td></tr>
+      <tr class="reg-total"><td colspan="3">Total recibido en Colombia: <span class="reg-amt">$18.997.563</span></td></tr>
+    </tbody>
+  </table></div>
+  <p class="reg-note">Los pagos al banco del 21 de agosto están, con sus comprobantes, en la actualización del 24 de agosto.</p>
   <a class="doc-thumb" href="img/notificacion-alcaldia.jpg" target="_blank" rel="noopener">
     <img src="img/notificacion-alcaldia.jpg" width="1240" height="1755" alt="Notificación oficial: vivienda no habitable, evacuación (datos personales cubiertos)" loading="lazy">
     <span><strong>Notificación oficial del Consejo de Gestión del Riesgo</strong><br>
@@ -498,7 +525,7 @@ un chat o en Momentos（朋友圈）y envíalo.</p>
 
 <div class="sticky"><a class="btn" href="#donar">💚 Donar ahora</a></div>
 
-<script src="data.js?v=32"></script>
+<script src="data.js?v=33"></script>
 <script>
 (function(){
   var c = window.CAMPAIGN; if (!c) return;
@@ -526,7 +553,7 @@ un chat o en Momentos（朋友圈）y envíalo.</p>
 function shareStory(el){
   var orig = el.textContent;
   el.textContent = "Preparando imagen…";
-  fetch("img/story-es.jpg?v=11").then(function(r){ return r.blob(); }).then(function(b){
+  fetch("img/story-es.jpg?v=12").then(function(r){ return r.blob(); }).then(function(b){
     var f = new File([b], "ayuda-mabel.jpg", {type: "image/jpeg"});
     if (navigator.canShare && navigator.canShare({files: [f]})) {
       navigator.share({files: [f], text: "La casa de Mabel Xiomara en Circasia se perdió en el terremoto, pero la deuda con el banco sigue. Cómo ayudar: https://help-mabel.co"})
@@ -534,9 +561,9 @@ function shareStory(el){
         .catch(function(){ el.textContent = orig; });
     } else {
       el.textContent = "Guarda la imagen y súbela a tu estado 📲";
-      window.open("img/story-es.jpg?v=11", "_blank");
+      window.open("img/story-es.jpg?v=12", "_blank");
     }
-  }).catch(function(){ el.textContent = orig; window.open("img/story-es.jpg?v=11", "_blank"); });
+  }).catch(function(){ el.textContent = orig; window.open("img/story-es.jpg?v=12", "_blank"); });
   return false;
 }
 function copyText(t, el, ok){
