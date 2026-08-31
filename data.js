@@ -2,9 +2,9 @@
 // OJO: tras CUALQUIER cambio en este archivo, subir el número de versión (?v=N)
 // en las etiquetas <script src="data.js?v=N"> de las 4 páginas — mientras el
 // Browser Cache TTL de Cloudflare siga en 4h, es la única forma de que los
-// navegadores con caché vieja carguen el archivo nuevo. Versión actual: v=33 (v=16 y v=17 quedaron cacheados con contenido viejo en Cloudflare el 17-ago: alguien pidió las URLs versionadas antes del push).
+// navegadores con caché vieja carguen el archivo nuevo. Versión actual: v=34 (v=16 y v=17 quedaron cacheados con contenido viejo en Cloudflare el 17-ago: alguien pidió las URLs versionadas antes del push).
 window.CAMPAIGN = {
-  raised: 65610000,             // COP recaudados (tabla de la familia sin las filas de costos + PayPal €292 + Wise A$500 + transferencia DE €40; las dos tandas desde China ya están dentro de la cuenta en Colombia) — 29-ago-2026
+  raised: 67324000,             // COP recaudados (tabla de la familia sin las filas de costos + PayPal €292 + Wise A$500 + transferencia DE €240 + China ¥20) — 31-ago-2026
   firstGoal: 89400000,          // meta = la deuda completa (reencuadre 14-ago; hitos de 15M y 30M superados)
   monthly: 1824000,             // cuota del marco público 89,4M = 49 cuotas (desde el 21-ago la cuota real es $1.216.000 — el crédito pequeño quedó saldado; se revisará cuando el banco informe el saldo)
   copPerEur: 3597,              // tasa COP por EUR (verificada 21 ago 2026; revisar mensualmente)
